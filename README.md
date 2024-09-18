@@ -6,6 +6,13 @@
 docker compose -f docker-compose-vwt.yml up -d
 ```
 
+Afterwards the node has to be bootstrapped as follows:
+
+```sh
+curl --location 'http://localhost:4000/bootstrap' \
+--header 'x-api-key: 3213833fdcf9842e07d3a6584769c380'
+```
+
 ## IOTA node
 
 Please use the IOTA-EBSI sandbox endpoint (Stardust)
