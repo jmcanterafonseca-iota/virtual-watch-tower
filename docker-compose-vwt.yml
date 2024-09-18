@@ -1,0 +1,12 @@
+version: "3.5"
+services:
+    tlip.node:
+        image: iotazebra/tlip-node:1.0
+        env_file:
+            - .env
+        ports:
+            - 4000:4000
+        volumes:
+            - ./.dev-storage:/usr/app/.dev-storage
+            - ./.dev-config/config-iota-connector.json:/usr/app/dist/apps/api/rest-server/assets/config-iota-connector.json
+        restart: always
