@@ -13,16 +13,15 @@ curl --location 'http://localhost:4000/bootstrap' \
 --header 'x-api-key: 3213833fdcf9842e07d3a6584769c380'
 ```
 
-## IOTA node
-
-Please use the IOTA-EBSI sandbox endpoint (Stardust)
-
-## Configuration
+### Configuration
 
 The needed `.env` and the configuration (JSON) are provided in this repository. 
 
 An additional token is needed to get access to the IOTA Node and plugins. 
 
+## IOTA node
+
+Please use the IOTA-EBSI sandbox endpoint (Stardust)
 
 ## Open APIs
 
@@ -87,5 +86,10 @@ curl --location 'http://localhost:4000/tlip-connector/notify' \
 }'
 ```
 
+### List consignments in the system
 
+```sh
+curl --location 'http://localhost:4000/tlip/consignments' \
+--header 'x-api-key: 3213833fdcf9842e07d3a6584769c380'
+```
 
