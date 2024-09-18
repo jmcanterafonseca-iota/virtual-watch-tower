@@ -41,13 +41,51 @@ https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips
 Bottom line, Yes you can use the testnet, but for convenience reasons the node version I am going to deliver to you is going to use the EBSI-IOTA sandbox 
 (it is just an IOTA Stardust network but ready to be used by the VWT use case). 
 
+## Examples
+
+### Identity
+
 For creating identities and verifiable credentials please check the examples, for instance:
 
 https://github.com/iotaledger/tangle.js/blob/stardust/examples-stardust-inx/src/identity/createDIDFundedByPlugin.ts 
 
 https://github.com/iotaledger/tangle.js/blob/stardust/examples-stardust-inx/src/credential/createVCWithIOTAIdentity.ts
 
+### Consignment Creation through TLIP Connector
 
-## Other examples
+```sh
+curl --location 'http://localhost:4000/tlip-connector/notify' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: 3213833fdcf9842e07d3a6584769c380' \
+--data-raw '{
+    "@context": [
+        "https://www.w3.org/ns/activitystreams",
+        "https://w3id.org/opengtsc",
+        "https://vocabulary.uncefact.org/unece-context.jsonld"
+    ],
+    "generator": "did:iota:ebsi:0xb62afcd0150d048ea0679af61d28d0eb1ad1b969f411b03997194df232b27383",
+    "id": "https://tlip.example.org/act7",
+    "type": "Create",
+    "actor": {
+        "type": "Organization",
+        "id": "did:iota:ebsi:0xb62afcd0150d048ea0679af61d28d0eb1ad1b969f411b03997194df232b27383"
+    },
+    "object": {
+        "type": "Consignment",
+        "globalId": "UCR2022KE45678999027",
+        "exporterParty": {
+            "identificationId": "P051219453I",
+            "identificationType": "KRA_PIN_Number"
+        },
+        "exportTypeCode": "09011100",
+        "destinationCountry": {
+            "type": "Country",
+            "countryId": "unece:CountryId#GB"
+        }
+    },
+    "updated": "2021-12-12T12:12:12Z"
+}'
+```
+
 
 
