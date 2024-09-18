@@ -1,0 +1,101 @@
+{
+    "buildingBlocks": {
+        "auditableItemGraph": {
+            "serveRestRoutes": true
+        },
+        "eventBus": {
+            "serveRestRoutes": false
+        },
+        "logger": {
+            "serveRestRoutes": false
+        },
+        "metrics": {
+            "serveRestRoutes": false
+        },
+        "iotaConnector": {
+            "serveRestRoutes": true,
+            "endpoint": "__ENV_S_IOTA_NODE_ENDPOINT__",
+            "token": "__ENV_S_IOTA_NODE_TOKEN__"
+        },
+        "tlip": {
+            "serveRestRoutes": true
+        },
+        "tlipConnector": {
+            "serveRestRoutes": true
+        },
+        "simpleEventRepository": {
+            "serveRestRoutes": true
+        },
+        "documentManagement": {
+            "serveRestRoutes": true,
+            "storage": "__ENV_S_DOCUMENT_STORAGE__"
+        },
+        "dataExtraction": {
+            "serveRestRoutes": false,
+            "extractionMatrixDirectory": "assets/matrices/extractionMatrices",
+            "displayMatrixDirectory": "assets/matrices/displayMatrices"
+        },
+        "dataProxy": {
+            "serveRestRoutes": false
+        },
+        "permissions": {
+            "serveRestRoutes": false
+        },
+        "identity": {
+            "serveRestRoutes": false
+        }
+    },
+    "fileStorageDirectory": "../../../.dev-storage",
+    "staticKeys": {
+        "jwtSubjectAuthKey": "__ENV_S_JWT_SUBJECT_AUTH_KEY__"
+    },
+    "urlAuth": {
+        "key": "__ENV_S_URL_AUTH_KEY__"
+    },
+    "logging": {
+        "levels": [
+            "info",
+            "warn",
+            "error"
+        ],
+        "includeObjects": true,
+        "includeResponseStack": true,
+        "storeLogLevels": [
+            "error"
+        ]
+    },
+    "scyllaDB": {
+        "hosts": [
+            "__ENV_S_SCYLLA_DB_HOSTS__"
+        ],
+        "localDataCenter": "__ENV_S_SCYLLA_DB_LOCAL_DATA_CENTER__",
+        "keyspace": "__ENV_S_SCYLLA_DB_KEYSPACE__"
+    },
+    "aws": {
+        "region": "__ENV_S_AWS_REGION__",
+        "resourcePrefix": "__ENV_S_AWS_RESOURCE_PREFIX__",
+        "accessKeyId": "__ENV_S_AWS_ACCESS_KEY_ID__",
+        "secretAccessKey": "__ENV_S_AWS_SECRET_ACCESS_KEY__"
+    },
+    "services": {
+        "entity": "__ENV_S_ENTITY_SERVICE_STORAGE__",
+        "blob": "__ENV_S_BLOB_SERVICE_STORAGE__",
+        "immutable": "__ENV_S_IMMUTABLE_SERVICE_STORAGE__",
+        "mail": "__ENV_S_MAIL_SERVICE__"
+    },
+    "email": {
+        "senderEmail": "notifications@tlip.io",
+        "organization": "TLIP SERVICES",
+        "verificationUrl": "__ENV_S_EMAIL_VERIFICATION_URL__",
+        "inviteUrl": "__ENV_S_EMAIL_INVITE_URL__",
+        "resetPasswordUrl": "__ENV_S_PASSWORD_RESET_URL__"
+    },
+    "identity": {
+        "networkName": "ebsi",
+        "provider": "local",
+        "verifiableCredentialRootUrl": "http://example.org"
+    },
+    "node": {
+        "nodeEndpoint": "__ENV_S_IOTA_NODE_ENDPOINT__"
+    }
+}
