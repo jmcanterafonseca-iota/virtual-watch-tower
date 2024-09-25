@@ -1,5 +1,8 @@
 {
     "buildingBlocks": {
+        "authentication": {
+            "serveRestRoutes": true
+        },
         "auditableItemGraph": {
             "serveRestRoutes": true
         },
