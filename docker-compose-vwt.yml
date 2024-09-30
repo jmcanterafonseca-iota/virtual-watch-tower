@@ -1,7 +1,7 @@
 version: "3.5"
 services:
     tlip.node:
-        image: iotazebra/tlip-node:1.0
+        image: iotazebra/tlip-node:1.0.1
         env_file:
             - .env
         ports:
