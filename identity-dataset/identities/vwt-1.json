@@ -1,0 +1,19 @@
+{
+    "did": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+    "privateKeyDidControl": "0x5e239050f0d5129a245e731703f9dc397d8ee2716152a79741989fb68152b68244b32f5745c7b00a4bbf03acb73eca726e01bdf7f8ba43c31c711e32af0dfd98",
+    "privateKeyJwk": {
+      "key_ops": [
+        "sign"
+      ],
+      "ext": true,
+      "crv": "Ed25519",
+      "d": "0d548fuZdis11a4zW_YTQfBtlmlLQEZARkBWhIajkKM",
+      "x": "LS5i7_UP11u-Hx6V6IMMesMXhwcM1XfhQ56LlwCovXM",
+      "kty": "OKP",
+      "kid": "lYAEPQGdcH9crG0jqB_NcoYUYTnxU-BX1OI5PH3bHjw",
+      "alg": "EdDSA",
+      "use": "sig"
+    },
+    "privateKeyVerificationMethodRaw": "0xd1de78f1fb99762b35d5ae335bf61341f06d96694b4046404640568486a390a3",
+    "publicKeyVerificationMethodRaw": "0x2d2e62eff50fd75bbe1f1e95e8830c7ac31787070cd577e1439e8b9700a8bd73"
+  }
