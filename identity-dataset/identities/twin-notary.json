@@ -1,0 +1,20 @@
+{
+    "did": "did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:notary",
+    "privateKeyDidControl": "",
+    "privateKeyJwk": {
+        "kty": "RSA",
+        "n": "xlrvYnNIm_JtC-3Eddoj5RiIpVBD3s5gNTIm6Efeel0UuRVpOgIxu-U7bpC87grm4B9730WnXrZ4waa60fOE8_1DQyj222tAPo-O14ieFnR8IsOytr6hMaM76prtGPp_jyPqdfDaW00Mf5JstDIoVPiGJhH8_OORZKidZLLWK8MfD0GT1W77ojxjx9Y1WfgyMwMD_42Z_NF9kbeUlXjw7wIG8iSx6GppXWqNsD6R6NKJs4cgukd3TFUu8OytPmsJWLJgGh6T89k8iXgcjp95sGwirx92zHv7I0LFVwGXB_DBjNPAveLNqa5xIzDcLoM6lFxEUJQFlpthmtP5e6DFvw",
+        "e": "AQAB",
+        "d": "ouU5JJPidFeR4DMCnXpo8hLE3WZeZpL7hZRLSYUEG19nzlvcD8yPhWxK85Ef5ynC0xpoA0NToT-fSgGf-R3Q-QLrgzMYD7gziW0h9LV4hp5g97fZg6RoAri4UwGqZ1IJAceQHA2RdVuAQSBB73YlkyqKGKe7KP_GfnDO2UzZABQKejs58bDzG3zgMy2e13kthzxLdw6YSIWw2MiJfNNDhPtDxT32Z04sh5ic_vivDgDaByGpNiXhyZ5eDQMDCq0I7d8sgB_iBebkK0KCUXySp6gYYT4-gDlm8xR4N5Rzw9zBsu_gYDNvWxbne7jxMxA-R20xfacwljA22gwlWiqOGQ",
+        "p": "2INPRAwr3rfCrSPQhzus0StW448ZiGMS7iJM3kMpA3v075NK3LR1-zjwXHbZtlbYYPLfjmpOIfnrVC3JuErCeuylCmh18xHu7VZaEdnEm2F6dqXyS95tlY4UxF8AYOUQpgJahOTTDyrij3TsGuE-AGhpjJ9IymgUiMSat_aJSW0",
+        "q": "6ofd6jiKiaIiQJRE_Tpmix5Lj7_YDvXMFM9pLec2C7WLG0wGotSLyHlznugPKNnG8OMwNJE6YPuFWA5uiGGYYGc_Xd52kzQrguDfxYmPziZA2AqcJJs1NYaDbeNHBp4CaKoVJB8_2oI12V0GgJWzTjK5UQASmpOTL2ncZIpi3Fs",
+        "dp": "0vCLh3Z8P061Ik5kWXywUFFzI91FOPWdedh9H4Y7LSPVbJwKMaC32XyN4OgCEH3n7fxyBaRYXw3IUokRoLVlaLGp0cwYLiropt6cfgu2WtPLplDjETuxdCWq4e7UxZImeDaOzi7J2lsjxDRb24xbBba0Lsb4-goRB3bUbiqJcrk",
+        "dq": "wymcuTOj1TReXG8FmdPnUQ08w7pZCNnxob-XPuOQTd4ci_KP8x_70i9-z1U8iDnxGrNzgcr4UYv8QnJ_-G1-Z3qDeJGPCp_3NUn77F20lU-v1he-J5gghxIQfHkMuazzRDWEsjJu6F5CgUawCoCIXSJIo-bzlD4J1QK6q8-cxNE",
+        "qi": "fpmWOriRe82c0Pf4lgFwZ_N4H7V89-arP-giadsF52OlF848DeBLL_pKtwaoy4hybbyVmRMAoLxhPZ2GCjOqJ0OBwRFpPMETtkCK4m4LuRRleuXAVmsCQDzfMQ2_ZKJwrZcQSzmHsDqOsSJ_SzwMIcw8Hmz7PFGPB2diMFC03Pk",
+        "ext": true,
+        "kid": "ce578ef09d0e4058cf8abc",
+        "alg": "RS256",
+        "use": "sig"
+    },
+    "privateKeyVerificationMethodRaw": ""
+}

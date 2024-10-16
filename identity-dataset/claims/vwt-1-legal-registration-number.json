@@ -1,0 +1,17 @@
+{
+    "id": "https://jmcanterafonseca-iota.github.io/virtual-watch-tower/public/credentials/vwt-1/legalRegistrationNumberVC.json",
+    "credentialSubject": {
+        "@context": [
+            "https://registry.lab.gaia-x.eu/development/api/trusted-shape-registry/v1/shapes/jsonld/trustframework#"
+        ],
+        "type": "gx:legalRegistrationNumber",
+        "gx:leiCode": "549300Y0QTYPNGFLT116",
+        "gx:countryCode": "SE",
+        "gx:subdivisionCountryCode": "SE-AB"
+    },
+    "evidence": {
+        "gx:evidenceOf": "LEI_CODE",
+        "gx:evidenceURL": "https://search.gleif.org/#/record/549300Y0QTYPNGFLT116",
+        "gx:executionDate": "2024-10-16T11:46:23.032+00:00"
+    }
+}

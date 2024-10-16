@@ -1,0 +1,20 @@
+{
+    "did": "did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:dch",
+    "privateKeyDidControl": "",
+    "privateKeyJwk": {
+        "kty": "RSA",
+        "n": "tGLESsZxvYUd603-sRb3KF6hMpOLtfw2jrcYFPpsyRPSpeTrAVxE4V25u1IeYh_KYpu5wEp32VOMveKptX-znH4qoQri2W5NpTFK3cX2hmKeU0ermNy-UBZIj2Edfh1RKBOZL0VsBGI_aCItmtcqbuDJlPKSQkp0jogqaPmB2ouBdUta-P4ATiDGUahtLpkrKZsDvEJ90k8YIeNm-TswTrQcXIZIoq52Tcjcg7224imGo8KKmQta7FLZPIesI-hTOC6mHgEDeJ685ZdCIA2pJnI2uyeDQhortTMqLmd9TINkatPXu9-Isrz45dljxoVQ0YpFNUaOpTBAwbfL4RNEZMrwETt98NG3ApeQEGtYifCOTfmbjF43S6E_n78FILMoCgF-JNFBp4Z734Qlpj1hDe1fTxRtruSmgGKR82jEOSUpKt71Q2tEYMwNI-6k-yrMb5IlMqxn4JtUJVIGEPpRCf9d9DS_5zmQbj_KmOXMrn16LjGJRCvKoM44TK7UXOYz",
+        "e": "AQAB",
+        "d": "IC0N0N45YG2q3Vs5ETZbk0u6RoUui_sOGfbDNSeX8YeBPgc9pJBc-mfx0aTjMQ2w1APxNKoXmrAsyB6RtvHLUBOZ3Pql4SiKWx2egFz8T8YY2N_3XnQ18iId2KBwuL3Z0oYrfIoffLthf3xsYtEeVC2BTD7-MYDW6HfNz_FhQ4BDW4zFJQQxOlPq6ogIPktexumakkEsIWwFkZ1Fir9LERTTvnrdqLFYFrD-5CsB8WwBGwRIN3wHGVagzFgaa3-4iFsInxxipiWUIav3Dw7m8J-7jRPX_NH4TON4YZaxF7nGoZHkTDmKjZi1nc227AAywjD8n2RDQP98GUYAWIiYDqkiRRt4LqniTkrOz4rKGur4NI1tX7YCRN6bMdik78QGwJq-sJAWT3bF5ZJzEKBztYZcc9H_6254L9gaPg8iWdULnZoZSih4FHBOEqbEIHvna5-TM2gbxGmlux4f0vc62JnrcJ0l5huwHL38Fd-ErWeU_niZWizrymbXYLqMUgE",
+        "p": "88XUaQJY6Y2vAfitVllNv3r8vgs-r2GzZntOxahB0xvr5q7u3SrbgQiNczZ8Hf9Ekn-Oo1Wd2da22HlaBXVLwaJn76wODE8D5H486OTJ8LdhQYCfvxQf7WVIpQlbLk0utFcqmE2j3wP4RSIRmyWMEfTAitZ0Tkylm8I1JukrK65aVzfkxpTY7h56arxjZJS_QoZ1jtZ5Znf8ydzQ5lJspWjykEArrEg5nPYh3TkgOqbVzmEEv4WFAR148jXMtdHj",
+        "q": "vW8D4Zs7NZO01yBUyMvmn_cjkKFMMBAIczxAz_y8e7qUtx246pL12JWwg8-9dAW-FiWC8q8WV27ZskBrue19glgyYcNk5floR_7yyC6w5zjhRNcdhkDyu8PTQ3eMbspQiZ4BFNCHnoEv3LRFLZIxOBc-kQ5YTEtDr-GFzp7WQ0ywSREtSiEFNCLngf4_mSc6j50aZ-hfI5MQFi_MnQPyn84ysG6p_XnLMBq2GUechG82rn5rpYudTWPK-6fZV4tx",
+        "dp": "d8DQp0F68kkjFyHV7VxzoERH0whtI_UoD4k12k3dAFtwGOQI_edm682Kx3WVpZrYUeuN49lUcUZUjqWWvqWvsJEa5Beu0wciD2agf3ydY76CbY5Fa7X0NUgTVtfwzh8meXt0tls1zIIDvdqNsZzRYaTNzaaqfiiTFqBiQho7lfrR8JTJs3A93URluPeREEEub_zj1WaxPtBlA7mRegQ10VBsEMclbT4R53TWj_nXRljdIcRxc7Cg9TpIRxx80zkn",
+        "dq": "s9WYUa0UYKCApVnEI3uuzV3JHZyCv335B6zDuq-sH6nZVJ2a1tX9Hke88uVcbbCl7FBgKBOfmhFaCaauniufYwZnjff46XoETZTy1qe8uUV-VeQB21n9FdOp0_rCDstx-bNOQ3xTw13RGizpH4IRx7YJZ5u-p28sKuRmKukPb4R2NmdgH2eJkR0xum6r4bEkHwJ99vbamuMZ-nYWQVlmE9-kr2nfZwsgoeI5zXX2WKNbvfu2JcqM4tNB9_Y4lquB",
+        "qi": "yiOSJiWgTBdolH-H62OkfFjNJAfX2uzQ9SHzAqV3YO-8ktwll2UgRRRmAX2PrCyoDFOw_S-vrdRSjN0U_CdYcc-jFmy9t5C6NkLBwhW_MyVftFNz99UcwcMMDhUydo3EeTeg77JqNYZPRhTX1HVhixKqesFt_b7Le254DgbauMH60tqQan1BZdu6RM3wq6punG3GgR-I-ODiPrM0ZXwXIoDHn13N7ftxoENJWwqu59cC3jU4cemBsB0UYgjT9H9H",
+        "ext": true,
+        "kid": "nMym2ECibPCvdD2XJSm_S1TBzTDg0mcIzZaEggo0GmA",
+        "alg": "RS256",
+        "use": "sig"
+      },
+    "privateKeyVerificationMethodRaw": ""
+}

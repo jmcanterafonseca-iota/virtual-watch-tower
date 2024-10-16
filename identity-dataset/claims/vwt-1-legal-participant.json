@@ -1,0 +1,16 @@
+{
+    "id": "https://jmcanterafonseca-iota.github.io/virtual-watch-tower/public/credentials/vwt-1/legalParticipantVC.json",
+    "credentialSubject": {
+        "type": "gx:LegalParticipant",
+        "gx:legalName": "Example Virtual Watch Tower 1",
+        "gx:legalRegistrationNumber": {
+            "id": "https://jmcanterafonseca-iota.github.io/virtual-watch-tower/public/credentials/vwt-1/legalRegistrationNumberVC.json"
+        },
+        "gx:headquarterAddress": {
+            "gx:countrySubdivisionCode": "SE-AB"
+        },
+        "gx:legalAddress": {
+            "gx:countrySubdivisionCode": "SE-AB"
+        }
+    }
+}
