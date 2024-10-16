@@ -134,3 +134,23 @@ docker run -it -v ./identity-dataset:/ext --rm onboardingcli/onboardingcli vc cr
 
 ## Presenting the Credentials to the Clearing House for Checking Compliance
 
+Now that the three needed Credentials are available they need to be presented to the Clearing House. The Clearing House (based on Gaia-X open source components) needs those credentials wrapped into a Verifiable Presentation signed by the holder (by our Participant). In order to generate such a VP is is needed to execute the following instruction:
+
+```sh
+docker run -it -v ./identity-dataset:/ext --rm onboardingcli/onboardingcli vp create --holder-identity-file /ext/identities/participants/vwt-1.json --vc-version 2 --vc-file /ext/credentials/vwt-1/vwt-1-legal-participant-credential.json --vc-file /ext/credentials/vwt-1/vwt-1-legal-registration-number-credential.json --vc-file /ext/credentials/vwt-1/vwt-1-terms-conditions-credential.json
+```
+
+Once the VP is available (as JWT) it has to be presented to the Clearing House through the following API call:
+
+```sh
+
+```
+
+As a result a Compliance Credential, VC, will be issued. Such a Compliance Credential contains references (points to) the original Credentials that were issued formerly. That's why in order to enable the verification of this Compliance Credential it is needed to publish those Credentials following the steps below.
+
+## Publication of the original Credentials
+
+An optional step before the publication of the original Credentials is to add a JWS Signature to them, as the JSON-LD credential originally was not signed by the onboarding tool (we only have a JWT Credential signed). For doing so ... 
+
+## Presenting the Compliance Credential to the Federated Catalogue Registry
+
