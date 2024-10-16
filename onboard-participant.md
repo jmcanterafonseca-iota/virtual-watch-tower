@@ -143,10 +143,61 @@ docker run -it -v ./identity-dataset:/ext --rm onboardingcli/onboardingcli vp cr
 Once the VP is available (as JWT) it has to be presented to the Clearing House through the following API call:
 
 ```sh
-
+curl --location 'http://localhost:3005/api/credential-offers?vcid=https%3A%2F%2Fvwt-1.example.org%2Fcredentials%2Fcompliance-credential.json' \
+--header 'Content-Type: application/jwt' \
+--data 'eyJhbGciOiJFZERT...'
 ```
 
 As a result a Compliance Credential, VC, will be issued. Such a Compliance Credential contains references (points to) the original Credentials that were issued formerly. That's why in order to enable the verification of this Compliance Credential it is needed to publish those Credentials following the steps below.
+
+```json
+{
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://w3id.org/gaia-x/development#"
+  ],
+  "type": [
+    "VerifiableCredential",
+    "gx:ComplianceCredential"
+  ],
+  "id": "https://vwt-1.example.org/credentials/compliance-credential.json",
+  "issuer": "did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:dch",
+  "validFrom": "2024-10-16T15:27:39.088Z",
+  "validUntil": "2025-01-14T16:27:39.081Z",
+  "credentialSubject": {
+    "id": "https://vwt-1.example.org/credentials/compliance-credential.json#cs",
+    "gx:evidence": [
+      {
+        "id": "https://jmcanterafonseca-iota.github.io/virtual-watch-tower/public/credentials/vwt-1/legalParticipantVC.json",
+        "type": "gx:ComplianceEvidence",
+        "gx:integrity": "sha256-1e14087fa4db51f9a24c967d45a18915b5a073fed2ed115ee74c9c2648917b18",
+        "gx:integrityNormalization": "RFC8785:JCS",
+        "gx:engineVersion": "2.2.0",
+        "gx:rulesVersion": "PRLD-24.04_pre",
+        "gx:originalType": "gx:LegalParticipant"
+      },
+      {
+        "id": "https://jmcanterafonseca-iota.github.io/virtual-watch-tower/public/credentials/vwt-1/legalRegistrationNumberVC.json",
+        "type": "gx:ComplianceEvidence",
+        "gx:integrity": "sha256-965aba05a63148d04fdbc24aadef71b8df82d330cf4e39a831095da6c5e17b9c",
+        "gx:integrityNormalization": "RFC8785:JCS",
+        "gx:engineVersion": "2.2.0",
+        "gx:rulesVersion": "PRLD-24.04_pre",
+        "gx:originalType": "gx:legalRegistrationNumber"
+      },
+      {
+        "id": "https://jmcanterafonseca-iota.github.io/virtual-watch-tower/public/credentials/vwt-1/termsAndConditionsVC.json",
+        "type": "gx:ComplianceEvidence",
+        "gx:integrity": "sha256-710442febb7e3897a1a79c65f5703905a097274f46ec0572be464b82a0a35ea0",
+        "gx:integrityNormalization": "RFC8785:JCS",
+        "gx:engineVersion": "2.2.0",
+        "gx:rulesVersion": "PRLD-24.04_pre",
+        "gx:originalType": "gx:GaiaXTermsAndConditions"
+      }
+    ]
+  }
+}
+```
 
 ## Publication of the original Credentials
 
@@ -154,3 +205,4 @@ An optional step before the publication of the original Credentials is to add a 
 
 ## Presenting the Compliance Credential to the Federated Catalogue Registry
 
+## Registering the participant within a TLIP Node
