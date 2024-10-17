@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "CommonJS",
+    "outDir": "dist",
+    "allowJs": false,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "strict": true,
+    "noUnusedLocals": true
+  },
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Recommended",
+  "exclude": [
+    "node_modules",
+    "/**/*.spec.ts",
+    "coverage",
+    "jest.config.js",
+    "commitlint.config.js"
+  ]
+}

@@ -201,8 +201,51 @@ As a result a Compliance Credential, VC, will be issued. Such a Compliance Crede
 
 ## Publication of the original Credentials
 
-An optional step before the publication of the original Credentials is to add a JWS Signature to them, as the JSON-LD credential originally was not signed by the onboarding tool (we only have a JWT Credential signed). For doing so ... 
+An optional step before the publication of the original Credentials is to add a JWS Signature to them, as the JSON-LD credential originally was not signed by the onboarding tool (we only have a JWT Credential signed). For doing so the following steps are needed:
+
+```sh
+git clone https://github.com/jmcanterafonseca-iota/virtual-watch-tower
+cd tools/jws-signer
+npm install
+npm run build
+```
+
+Afterwards it is needed to set up a `.env` file with the verification method of the signer and the private key. See example [here](./tools/jws-signer/env.example).
+
+So for signing the terms and conditions credentials we will set a `.env` as follows:
+
+```sh
+VER_METHOD="did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408#lYAEPQGdcH9crG0jqB_NcoYUYTnxU-BX1OI5PH3bHjw"
+KEY_TYPE='EdDSA'
+PRIVATE_KEY='-----BEGIN PRIVATE KEY-----
+MC4CAQAwBQYDK2VwBCIEINHeePH7mXYrNdWuM1v2E0HwbZZpS0BGQEZAVoSGo5Cj
+-----END PRIVATE KEY-----'
+```
+
+Then for signing we will execute
+
+```sh
+node ./dist/signCredential.js ../../identity-dataset/credentials/vwt-1/vwt-1-terms-conditions-credential.json
+```
+
+The result will be the same credential in JSON-LD format but adding the corresponding proof as a JsonWeb2020 proof. Afterwards, the result (JSON-LD content) shall be copied to the corresponding hosting site, so that the Credential is available to be dereferenced through the Web. 
+
+The same process shall be repeated with the legal entity credential and with the legal registration number credentials. However in those cases the `VER_METHOD` will be different so the `PRIVATE_KEY`. 
+
+For the legal entity credential the verification method shall be the one from TradeID. i.e. `did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:tradeid#3gsxoxHO5KgTlR2jPWJyk4HOWpzlzYsHnUqYOEeNQO0` and the `KEY_TYPE` must be `RS256`.
+
+For the legal registration number credential the verification method shall be the one from the TWIN Notary i.e. `did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:notary#iwoi2hSS6sBeI7eimkgqyXyB1wEUFQ4oESTa7crdz_s` and the `KEY_TYPE` must be `RS256`.
+
+And their respective private keys the ones found under the [pem-keys](./identity-dataset/pem-keys/) folder.
+
+At the end of this process there shall be three different credentials hosted as it happens in our example at [./docs/public/credentials/vwt-1/](./docs/public/credentials/vwt-1/).
 
 ## Presenting the Compliance Credential to the Federated Catalogue Registry
+
+The last step is to present the Compliance Credential to the Federated Catalogue Registry. This component is being developed by the IOTA Foundation. The API REST call is as follows:
+
+```sh
+
+```
 
 ## Registering the participant within a TLIP Node
