@@ -29,7 +29,7 @@ node --loader=extensionless ./es/identity/createDIDWithJWKFundedByPluginEd25519S
 
 The URL specified must be the URL that will host the certificate associated with the Verification method added to the DID document. The certificate will be signed by a CA (for instance Let's Encrypt) or a testing CA, like the ones that can be created with [mkcert](https://github.com/FiloSottile/mkcert).
 
-With that instruction a new IOTA Identity will be generated together with a Verification Method (bound to the corresponding DID document) that will be used to sign documents, etc. 
+With that instruction a new IOTA Identity will be generated together with a Verification Method (bound to the corresponding DID document) that will be used to sign documents, etc.
 
 It is recommended to resolve the DID through the INX Identity plugin so that it is checked the confirmation of the transaction in the IOTA Ledger:
 
@@ -79,6 +79,8 @@ MC4CAQAwBQYDK2VwBCIEINHeePH7mXYrNdWuM1v2E0HwbZZpS0BGQEZAVoSGo5Cj
 MCowBQYDK2VwAyEALS5i7/UP11u+Hx6V6IMMesMXhwcM1XfhQ56LlwCovXM=
 -----END PUBLIC KEY-----
 ```
+
+These keys in PEM format can be saved to a folder following a similar structure than the one found at [pem-keys](./identity-dataset/pem-keys/) folder.
 
 ### Generate a new certificate for the Identity's Verification Method
 
@@ -203,7 +205,7 @@ As a result a Compliance Credential, VC, will be issued, as follows.
 
 ## Publication of the original Credentials
 
-An optional step before the publication of the original Credentials is to add a JWS Signature to them, as the JSON-LD credential originally was not signed by the onboarding tool (we only have a JWT Credential signed). For doing so the following steps are needed:
+It is mandatory before the publication of the original Credentials is to add a JWS Signature to them, as the JSON-LD credential originally was not signed by the onboarding tool (we only have a JWT Credential signed). For doing so the following steps are needed:
 
 ```sh
 git clone https://github.com/jmcanterafonseca-iota/virtual-watch-tower
