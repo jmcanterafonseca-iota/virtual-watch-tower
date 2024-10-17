@@ -148,7 +148,7 @@ curl --location 'http://localhost:3005/api/credential-offers?vcid=https%3A%2F%2F
 --data 'eyJhbGciOiJFZERT...'
 ```
 
-As a result a Compliance Credential, VC, will be issued. Such a Compliance Credential contains references (points to) the original Credentials that were issued formerly. That's why in order to enable the verification of this Compliance Credential it is needed to publish those Credentials following the steps below.
+As a result a Compliance Credential, VC, will be issued, as follows.
 
 ```json
 {
@@ -199,6 +199,8 @@ As a result a Compliance Credential, VC, will be issued. Such a Compliance Crede
 }
 ```
 
+ Such a Compliance Credential contains references (points to) the original Credentials that were issued formerly. That's why in order to enable the verification of this Compliance Credential it is needed to publish those Credentials following the steps below.
+
 ## Publication of the original Credentials
 
 An optional step before the publication of the original Credentials is to add a JWS Signature to them, as the JSON-LD credential originally was not signed by the onboarding tool (we only have a JWT Credential signed). For doing so the following steps are needed:
@@ -232,9 +234,9 @@ The result will be the same credential in JSON-LD format but adding the correspo
 
 The same process shall be repeated with the legal entity credential and with the legal registration number credentials. However in those cases the `VER_METHOD` will be different so the `PRIVATE_KEY`. 
 
-For the legal entity credential the verification method shall be the one from TradeID. i.e. `did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:tradeid#3gsxoxHO5KgTlR2jPWJyk4HOWpzlzYsHnUqYOEeNQO0` and the `KEY_TYPE` must be `RS256`.
+For the legal Participant credential the verification method shall be the one from TradeID. i.e. `did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:tradeid#3gsxoxHO5KgTlR2jPWJyk4HOWpzlzYsHnUqYOEeNQO0` and the `KEY_TYPE` must be `RS256`.
 
-For the legal registration number credential the verification method shall be the one from the TWIN Notary i.e. `did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:notary#iwoi2hSS6sBeI7eimkgqyXyB1wEUFQ4oESTa7crdz_s` and the `KEY_TYPE` must be `RS256`.
+For the legal Registration Number credential the verification method shall be the one from the TWIN Notary i.e. `did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:notary#iwoi2hSS6sBeI7eimkgqyXyB1wEUFQ4oESTa7crdz_s` and the `KEY_TYPE` must be `RS256`.
 
 And their respective private keys the ones found under the [pem-keys](./identity-dataset/pem-keys/) folder.
 
@@ -242,10 +244,49 @@ At the end of this process there shall be three different credentials hosted as 
 
 ## Presenting the Compliance Credential to the Federated Catalogue Registry
 
-The last step is to present the Compliance Credential to the Federated Catalogue Registry. This component is being developed by the IOTA Foundation. The API REST call is as follows:
+The last step is to present the Compliance Credential (already obtained, see for example [vwt-1-compliance-credential.json](./identity-dataset/credentials/compliance/vwt-1-compliance-credential.json)) to the Federated Catalogue Registry. This component is being developed by the IOTA Foundation. The API REST call is as follows:
 
 ```sh
-
+curl --location 'http://localhost:3020/fed-catalogue/participant-credentials' \
+--header 'Content-Type: application/jwt' \
+--data 'eyJhbGciOiJSUzI1NiIsImlzcyI6ImRpZDp3ZWI6aW90YWxlZGdlci5naXRodWIuaW86ZWJzaS1zdGFyZHVzdC1jb21wb25lbnRzOnB1YmxpYzpnYWl...'
 ```
 
+If the API call is successful then the new Participant will be on boarded and will appear among the known participants in the Federated Catalogue Registry. 
+
+```sh
+curl --location 'http://localhost:3020/fed-catalogue/participants?id=did%3Aiota%3Aebsi%3A0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408'
+```
+
+will result in
+
+```json
+{
+    "@context": [
+        "https://w3id.org/gaia-x/development",
+        "https://schema.org",
+        "https://www.w3.org/ns/credentials/v2"
+    ],
+    "entities": [
+        {
+            "id": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+            "type": "Participant",
+            "lrnType": "LEI_CODE",
+            "countryCode": "SE",
+            "trustedIssuerId": "did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:dch",
+            "legalName": "Example Virtual Watch Tower 1",
+            "validFrom": "2024-10-16T15:27:39.088Z",
+            "validUntil": "2025-01-14T16:27:39.081Z",
+            "dateCreated": "2024-10-17T07:43:22.175Z",
+            "evidences": [
+                "https://jmcanterafonseca-iota.github.io/virtual-watch-tower/public/credentials/vwt-1/legalParticipantVC.json",
+                "https://jmcanterafonseca-iota.github.io/virtual-watch-tower/public/credentials/vwt-1/legalRegistrationNumberVC.json",
+                "https://jmcanterafonseca-iota.github.io/virtual-watch-tower/public/credentials/vwt-1/termsAndConditionsVC.json"
+            ]
+        }
+    ]
+}```
+
 ## Registering the participant within a TLIP Node
+
+Once a participant is known it has to be made known by a TLIP Node. Un this case we are creating a new login within a TLIP Node but instead of generating a new Identity, an existing Identity will be used. 
