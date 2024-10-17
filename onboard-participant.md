@@ -285,8 +285,40 @@ will result in
             ]
         }
     ]
-}```
+}
+```
 
 ## Registering the participant within a TLIP Node
 
-Once a participant is known it has to be made known by a TLIP Node. Un this case we are creating a new login within a TLIP Node but instead of generating a new Identity, an existing Identity will be used. 
+Once a participant is known it has to be made known by a TLIP Node. In this case we are creating a new user login within a TLIP Node but instead of generating a new Identity, an existing Identity will be used. As the TLIP Node is going to need the private key of the Participant in order to sign Credentials on its behalf it is needed to provide it in the registration call. 
+
+```sh
+curl --location 'http://localhost:4000/authentication/login/create' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: 3213833fdcf9842e07d3a6584769c380' \
+--data-raw '{
+    "emailAddress": "vwt-1@example.org",
+    "password": "qABCDE@1234567",
+    "role": "organization",
+    "identity": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+    "keyPair": {
+        "privateKey": "d1de78f1fb99762b35d5ae335bf61341f06d96694b4046404640568486a390a3",
+        "publicKey": "2d2e62eff50fd75bbe1f1e95e8830c7ac31787070cd577e1439e8b9700a8bd73"
+    }
+}'
+```
+
+You can observe that the private key and the public key are passed without the `0x` prefix. They are taken from the identity participant definition file, for instance [vwt-1.json](./identity-dataset/identities/participants/vwt-1.json). The `privateKeyVerificationMethodRaw` and the `publicKeyVerificationMethodRaw` are the fields to be used here. 
+
+After making the above REST call the a response similar than the following is obtained:
+
+```json
+{
+    "identity": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+    "privateKey": "d1de78f1fb99762b35d5ae335bf61341f06d96694b4046404640568486a390a3",
+    "publicKey": "2d2e62eff50fd75bbe1f1e95e8830c7ac31787070cd577e1439e8b9700a8bd73",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6aW90YTplYnNpOjB4NzRlNGFjMWFiYzA2NGIzZmVhMWZlYjA4ZGRlMjAyMjA0MThjNGFiZGI0Nzg3MzgwNzViODY5MTAwMTQzZTQwOCIsInRlbmFudElkIjoiYTM2OTVjMzM4NzY3NDgxM2RlZjkxOWE0OTVhYzNmNDUxNThhYmM5YmVmNzhlYzY0NWJhNzBhNzEzYjQ1MzdhYSIsImlhdCI6MTcyOTE1NjQxOCwiZXhwIjoxNzI5MTYwMDE4fQ.LbbcjW8BGQKCb7PHGeVfBH3eVTlzYNSpsiZUScTt9-4"
+}
+```
+
+The token now can be used by the Participant to interact with the TLIP Node, for instance to create a new Consignment. 
