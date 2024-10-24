@@ -166,7 +166,7 @@ will result in
     ],
     "entities": [
         {
-            "id": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+            "id": "https://serviceofferings.example.org/vwt-1/1234",
             "type": "ServiceOffering",
             "providedBy": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
             "servicePolicy": {
