@@ -17,7 +17,7 @@ The first credential to be generated is self-signed and it corresponds to the Se
 Assuming the current working directory is `virtual-watch-tower`: 
 
 ```sh 
-docker run -it -v ./identity-dataset:/ext --rm onboardingcli/onboardingcli vc create --claims-file /ext/claims/services/vwt-1-item-service.json --template-file /ext/templates/template.json --subject-did-file /ext/identities/participants/vwt-1.json --trusted-issuer-file /ext/identities/participants/vwt-1.json --vc-version 2 --issuers-dir /ext/identities --templates-dir /ext/templates --vc-dir /ext/credentials
+docker run -it -v ./identity-dataset:/ext --rm onboardingcli/onboardingcli vc create --claims-file /ext/claims/services/vwt-1-item-service.json --template-file /ext/templates/template.json --trusted-issuer-file /ext/identities/participants/vwt-1.json --vc-version 2 --issuers-dir /ext/identities --templates-dir /ext/templates --subject-did "https://serviceofferings.example.org/vwt-1/1234" --vc-dir /ext/credentials 
 ```
 
 In essence, in order to generate a credential the Identity of the issuer, the Identity of the Subject (in this case are the same), the Credential template and the Credential's claims file have to be provided. You can observe that it is needed to map a volume of the Docker container into a local folder (`identity-dataset`) so that the Docker container can find the corresponding files.
@@ -33,7 +33,7 @@ This credential will contain details about a Data Resource associated with and a
 You can observe the claims of this credential [here](./identity-dataset/claims/services/vwt-1-tlip-node-resource.json).
 
 ```sh 
-docker run -it -v ./identity-dataset:/ext --rm onboardingcli/onboardingcli vc create --claims-file /ext/claims/services/vwt-1-tlip-node-resource.json --template-file /ext/templates/template.json --subject-did-file /ext/identities/participants/vwt-1.json --trusted-issuer-file /ext/identities/participants/vwt-1.json --vc-version 2 --issuers-dir /ext/identities --templates-dir /ext/templates --vc-dir /ext/credentials
+docker run -it -v ./identity-dataset:/ext --rm onboardingcli/onboardingcli vc create --claims-file /ext/claims/services/vwt-1-tlip-node-resource.json --template-file /ext/templates/template.json --trusted-issuer-file /ext/identities/participants/vwt-1.json --vc-version 2 --issuers-dir /ext/identities --templates-dir /ext/templates --subject-did "https://tlip-nodes.example.org/vwt-1" --vc-dir /ext/credentials
 ```
 
 ## Presenting the Credentials to the Clearing House for Checking Compliance
