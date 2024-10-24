@@ -13,7 +13,7 @@
                 "@type": "Policy",
                 "uid": "http://example.com/policy:1010",
                 "permission": [{
-                    "assigner": "",
+                    "assigner": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
                     "target": "https://tlip-nodes.example.org/vwt-1",
                     "action": "use"
                 }]
