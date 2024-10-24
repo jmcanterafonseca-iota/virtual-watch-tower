@@ -1,0 +1,45 @@
+{
+    "id": "https://jmcanterafonseca-iota.github.io/virtual-watch-tower/public/credentials/vwt-1/serviceOfferingVC.json",
+    "credentialSubject": {
+        "id": "https://serviceofferings.example.org/vwt-1/1234",
+        "type": "gx:ServiceOffering",
+        "gx:providedBy": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+        "gx:serviceOfferingTermsAndConditions": {
+            "type": "gx:TermsAndConditions",
+            "gx:url": "https://tcs.example.org/1234",
+            "gx:hash": "1234"
+        },
+        "gx:description": "Item Details",
+        "gx:name": "Item Details",
+        "gx:title": "Item Details",
+        "gx:servicePolicy": {
+            "@context": "http://www.w3.org/ns/odrl.jsonld",
+            "type": "Agreement",
+            "uid": "http://policy.example.com/policy:1012",
+            "profile": "http://example.com/odrl:profile:01",
+            "permission": [
+                {
+                    "target": {
+                        "type": "Item",
+                        "name": "Item Details"
+                    },
+                    "assigner": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+                    "assignee": [
+                        "did:iota:ebsi:0x4fd47838348d496f29ee0b1c5268c542ad0e9d306eec527c6f9c4e528b8ac1e1"
+                    ],
+                    "action": "view"
+                }
+            ]
+        },
+        "gx:keyword": "VWT Item Details",
+        "gx:dataAccountExport": {
+            "gx:requestType": "API",
+            "gx:accessType": "digital",
+            "gx:formatType": "application/json"
+        },
+        "gx:aggregationOfResources": [
+            "https://tlip-nodes.example.org/vwt-1"
+        ],
+        "provisionType": "public"
+    }
+}

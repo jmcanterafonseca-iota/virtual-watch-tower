@@ -1,0 +1,24 @@
+{
+    "id": "https://jmcanterafonseca-iota.github.io/virtual-watch-tower/public/credentials/vwt-1/tlipNodeResourceVC.json",
+    "credentialSubject": {
+        "id": "https://tlip-nodes.example.org/vwt-1",
+        "type": "gx:DataResource",
+        "gx:producedBy": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+        "gx:exposedThrough": "http://host.docker.internal:4090",
+        "gx:copyrightOwnedBy": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+        "gx:containsPII": false,
+        "gx:license": "http://licenses.example.org/tlip-node",
+        "gx:resourcePolicy": {
+                "@context": "http://www.w3.org/ns/odrl.jsonld",
+                "@type": "Policy",
+                "uid": "http://example.com/policy:1010",
+                "permission": [{
+                    "assigner": "",
+                    "target": "https://tlip-nodes.example.org/vwt-1",
+                    "action": "use"
+                }]
+        },
+        "name": "VWT-1 Node",
+        "description": "TLIP Node operated by VWT-1"
+    }
+}
