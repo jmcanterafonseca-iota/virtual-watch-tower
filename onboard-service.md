@@ -4,7 +4,7 @@ Through this procedure a new Service and accompanying Data Resource can be onboa
 
 ## Prerequisites
 
-A Participant (the Service Provider) has already been registered following the [Participant Onboarding](./onboard-participant.md) steps. Thus, Participant's Identity is known. 
+A Participant (the Service Provider) has already been onboarded and registered on the Fed Catalogue following the [Participant Onboarding](./onboard-participant.md) procedure. Thus, Participant's Identity is known within the ecosystem.
 
 ## Generate the credentials needed for Service compliance
 
