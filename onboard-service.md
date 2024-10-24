@@ -119,30 +119,32 @@ MC4CAQAwBQYDK2VwBCIEINHeePH7mXYrNdWuM1v2E0HwbZZpS0BGQEZAVoSGo5Cj
 -----END PRIVATE KEY-----'
 ```
 
+Private keys are always found under the [pem-keys](./identity-dataset/pem-keys/) folder.
+
 Then for signing we will execute
 
 ```sh
-node ./dist/signCredential.js ../../identity-dataset/credentials/vwt-1/vwt-1-terms-conditions-credential.json
+node ./dist/signCredential.js ../../identity-dataset/credentials/services/vwt-1/vwt-1-service-offering-credential.json
 ```
 
 The result will be the same credential in JSON-LD format but adding the corresponding proof as a JsonWeb2020 proof. Afterwards, the result (JSON-LD content) shall be copied to the corresponding hosting site, so that the Credential is available to be dereferenced through the Web. 
 
-The same process shall be repeated with the legal entity credential and with the legal registration number credentials. However in those cases the `VER_METHOD` will be different so the `PRIVATE_KEY`. 
+The same process shall be repeated with the TLIP Node Resource Credential. 
 
-For the legal Participant credential the verification method shall be the one from TradeID. i.e. `did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:tradeid#3gsxoxHO5KgTlR2jPWJyk4HOWpzlzYsHnUqYOEeNQO0` and the `KEY_TYPE` must be `RS256`.
+```sh
+ node ./dist/signCredential.js ../../identity-dataset/credentials/services/vwt-1/vwt-1-tlip-node-resource-credential.json
+```
 
-For the legal Registration Number credential the verification method shall be the one from the TWIN Notary i.e. `did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:notary#iwoi2hSS6sBeI7eimkgqyXyB1wEUFQ4oESTa7crdz_s` and the `KEY_TYPE` must be `RS256`.
+In this case the `.env` should not change as the issuer of the Credential is the same Participant. 
 
-And their respective private keys the ones found under the [pem-keys](./identity-dataset/pem-keys/) folder.
-
-At the end of this process there shall be three different credentials hosted as it happens in our example at [./docs/public/credentials/vwt-1/](./docs/public/credentials/vwt-1/).
+At the end of this process there shall be two additional credentials hosted as it happens in our example at [./docs/public/credentials/vwt-1/](./docs/public/credentials/vwt-1/). Those Credentials are [serviceOfferingVC.json](./docs/public/credentials/vwt-1/serviceOfferingVC.json) and [tlipNodeResourceVC.json](./docs/public/credentials/vwt-1/tlipNodeResourceVC.json).
 
 ## Presenting the Compliance Credential to the Federated Catalogue Registry
 
 The last step is to present the Compliance Credential (already obtained, see for example [vwt-1-service-compliance-credential.json](./identity-dataset/credentials/compliance/vwt-1-service-compliance-credential.json)) to the Federated Catalogue Registry. This component is being developed by the IOTA Foundation. The API REST call is as follows:
 
 ```sh
-curl --location 'http://localhost:3020/fed-catalogue/participant-credentials' \
+curl --location 'http://localhost:3020/fed-catalogue/service-credentials' \
 --header 'Content-Type: application/jwt' \
 --data 'eyJhbGciOiJSUzI1NiIsImlzcyI6ImRpZDp3ZWI6aW90YWxlZGdlci5naXRodWIuaW86ZWJzaS1zdGFyZHVzdC1jb21wb25lbnRzOnB1YmxpYzpnYWl...'
 ```
@@ -156,6 +158,50 @@ curl --location 'http://localhost:3020/fed-catalogue/services?providedBy=did%3Ai
 will result in
 
 ```json
-
+{
+    "@context": [
+        "https://w3id.org/gaia-x/development",
+        "https://schema.org",
+        "https://www.w3.org/ns/credentials/v2"
+    ],
+    "entities": [
+        {
+            "id": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+            "type": "ServiceOffering",
+            "providedBy": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+            "servicePolicy": {
+                "@context": "http://www.w3.org/ns/odrl.jsonld",
+                "permission": [
+                    {
+                        "action": "view",
+                        "assignee": [
+                            "did:iota:ebsi:0x4fd47838348d496f29ee0b1c5268c542ad0e9d306eec527c6f9c4e528b8ac1e1"
+                        ],
+                        "assigner": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+                        "target": {
+                            "name": "Item Details",
+                            "type": "Item"
+                        }
+                    }
+                ],
+                "profile": "http://example.com/odrl:profile:01",
+                "type": "Agreement",
+                "uid": "http://policy.example.com/policy:1012"
+            },
+            "name": "Item Details",
+            "endpointURL": "http://host.docker.internal:4090",
+            "validFrom": "2024-10-24T07:44:15Z",
+            "validUntil": "2025-10-24T07:44:15Z",
+            "dateCreated": "2024-10-24T08:50:29.837Z",
+            "evidences": [
+                "https://jmcanterafonseca-iota.github.io/virtual-watch-tower/public/credentials/vwt-1/serviceOfferingVC.json"
+            ],
+            "aggregationOfResources": [
+                "https://tlip-nodes.example.org/vwt-1"
+            ]
+        }
+    ]
+}
 ```
 
+Now the Service Offering and policies are known by all Participants and the corresponding TLIP node endpoint.
