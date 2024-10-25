@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  gx-compliance:
+    image: iotazebra/gx-compliance-service:latest
+    env_file: .env.docker
+    container_name: gx-compliance-server
+    ports:
+      - "3005:3005"
+    volumes:
+      - ./certs:/mkcert
+    restart: 'unless-stopped'
+    depends_on:
+      - db
+  db:
+    image: memgraph/memgraph:latest
+    hostname: memdb
+
+volumes:
+  data:
+    driver: local

@@ -232,6 +232,8 @@ Then for signing we will execute
 node ./dist/signCredential.js ../../identity-dataset/credentials/vwt-1/vwt-1-terms-conditions-credential.json
 ```
 
+Alternatively this process can be performed through the [Dockerized version of the JWS signing tool](deploy-federation-services.md#signing-tool).
+
 The result will be the same credential in JSON-LD format but adding the corresponding proof as a JsonWeb2020 proof. Afterwards, the result (JSON-LD content) shall be copied to the corresponding hosting site, so that the Credential is available to be dereferenced through the Web. 
 
 The same process shall be repeated with the legal entity credential and with the legal registration number credentials. However in those cases the `VER_METHOD` will be different so the `PRIVATE_KEY`. 

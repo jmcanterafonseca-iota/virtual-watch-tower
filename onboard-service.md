@@ -135,7 +135,9 @@ The same process shall be repeated with the TLIP Node Resource Credential.
  node ./dist/signCredential.js ../../identity-dataset/credentials/services/vwt-1/vwt-1-tlip-node-resource-credential.json
 ```
 
-In this case the `.env` should not change as the issuer of the Credential is the same Participant. 
+Alternatively this process can be performed through the [Dockerized version of the JWS signing tool](deploy-federation-services.md#signing-tool).
+
+In this case the `.env` should not change as the issuer of the Credential is the same Participant.
 
 At the end of this process there shall be two additional credentials hosted as it happens in our example at [./docs/public/credentials/vwt-1/](./docs/public/credentials/vwt-1/). Those Credentials are [serviceOfferingVC.json](./docs/public/credentials/vwt-1/serviceOfferingVC.json) and [tlipNodeResourceVC.json](./docs/public/credentials/vwt-1/tlipNodeResourceVC.json).
 
