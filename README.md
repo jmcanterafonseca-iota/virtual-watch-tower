@@ -9,7 +9,7 @@ This repository contains different information concerning the TLIP - Virtual Wat
 * [Service onboarding](onboard-service.md)
 * [Workshop presentation](https://docs.google.com/presentation/d/1vyQOJ7jU9gSBx5Hc-_3ayvYjaZw3WzFzp3aMYpTM8w8/edit#slide=id.p)
 
-## Federated Services
+## Federation Services
 
 * [Deployment](deploy-federation-services.md)
 
