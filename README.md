@@ -1,4 +1,4 @@
-# TLIP - Virtual Watch Towner
+# TLIP - Virtual Watch Tower
 
 This repository contains different information concerning the TLIP - Virtual Watch Tower pilot. This is part of a collaboration between the Virtual Watch Tower initiative and TLIP / TWIN.
 
