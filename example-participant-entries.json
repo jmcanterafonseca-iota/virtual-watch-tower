@@ -1,1 +1,15 @@
-
+[
+  {
+		"id": "did:iota:ebsi:0xd078107b06e0691d602fb42e62f4e86d58dcbf2c209861b6d1f19983a0d2f14e",
+		"type": "Participant",
+		"lrnType": "LEI_CODE",
+		"countryCode": "SE",
+		"trustedIssuerId": "did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:dch",
+		"legalName": "Example Virtual Watch Tower 3",
+		"validFrom": "2024-10-17T11:16:47.741Z",
+		"validUntil": "2025-01-15T12:16:47.735Z",
+		"dateCreated": "2024-11-21T10:35:49.842Z",
+		"evidences": [
+		]
+	}
+]
