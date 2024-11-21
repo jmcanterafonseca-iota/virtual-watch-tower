@@ -10,12 +10,12 @@
                 {
                     "action": [
                         "view","modify", "annotate"
-                    ]
-					"assignee": [
+                    ],
+		    "assignee": [
                         "{{ ID_ROAMBEE }}"
                     ],
                     "assigner": "{{ ID_TRANSPOREON }}",
-					"target": {
+		    "target": {
                         "name": "Item Details",
                         "type": "Item"
                     }
@@ -23,12 +23,12 @@
                 {
                     "action": [
                         "view", "annotate"
-                    ]
-					"assignee": [
+                    ],
+		    "assignee": [
                         "{{ ID_A_STAR }}"
                     ],
                     "assigner": "{{ ID_TRANSPOREON }}",
-					"target": {
+		    "target": {
                         "name": "Item Details",
                         "type": "Item"
                     }
@@ -41,7 +41,7 @@
                         "{{ ID_M_BENCHMARK }}"
                     ],
                     "assigner": "{{ ID_TRANSPOREON }}",
-					"target": {
+		    "target": {
                         "name": "Item Details",
                         "type": "Item"
                     }
