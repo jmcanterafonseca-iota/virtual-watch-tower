@@ -1,1 +1,64 @@
-
+[
+  {
+    "id": "https://serviceofferings.example.org/transporeon/7891",
+    "type": "ServiceOffering",
+    "providedBy": "{{ ID_TRANSPOREON }}",
+    "servicePolicy": [
+        {
+            "@context": "http://www.w3.org/ns/odrl.jsonld",
+            "permission": [
+                {
+                    "action": [
+                        "view",”modify”, “annotate”
+                    ]
+					"assignee": [
+                        "{{ ID_ROAMBEE }}"
+                    ],
+                    "assigner": "{{ ID_TRANSPOREON }}”,
+					"target": {
+                        "name": "Item Details",
+                        "type": "Item"
+                    }
+                },
+                {
+                    "action": [
+                        "view", “annotate”
+                    ]
+					"assignee": [
+                        "{{ ID_A_STAR }}"
+                    ],
+                    "assigner": "{{ ID_TRANSPOREON }}”,
+					"target": {
+                        "name": "Item Details",
+                        "type": "Item"
+                    }
+                },
+                {
+                    "action": [
+                        "view", “annotate”
+                    ]
+					"assignee": [
+                        "{{ ID_M_BENCHMARK }}"
+                    ],
+                    "assigner": "{{ ID_TRANSPOREON }}”,
+					"target": {
+                        "name": "Item Details",
+                        "type": "Item"
+                    }
+                }
+            ]
+        }
+    ],
+    "name": "Item Details",
+		"endpointURL": "http://localhost:4000",
+		"validFrom": "2024-10-24T07:44:15Z",
+		"validUntil": "2025-10-24T07:44:15Z",
+		"dateCreated": "2024-10-24T08:50:29.837Z",
+		"evidences": [
+		],
+		"aggregationOfResources": [
+			"https://tlip-nodes.example.org/vwt-1"
+		]
+	}
+}
+]
