@@ -1,1 +1,27 @@
-
+[
+  {
+		"id": "https://tlip-nodes.example.org/vwt-1",
+		"type": "DataResource",
+		"producedBy": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+		"copyrightOwnedBy": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+		"license": "http://licenses.example.org/tlip-node",
+		"resourcePolicy": {
+			"@context": "http://www.w3.org/ns/odrl.jsonld",
+			"@type": "Policy",
+			"permission": [
+				{
+					"action": "use",
+					"assigner": "did:iota:ebsi:0x74e4ac1abc064b3fea1feb08dde20220418c4abdb478738075b869100143e408",
+					"target": "https://tlip-nodes.example.org/vwt-1"
+				}
+			],
+			"uid": "http://example.com/policy:1010"
+		},
+		"exposedThrough": "http://host.docker.internal:4090",
+		"validFrom": "2024-10-24T11:53:13Z",
+		"validUntil": "2025-10-24T11:53:13Z",
+		"dateCreated": "2024-10-24T12:10:20.141Z",
+		"evidences": [
+		]
+	}
+]
