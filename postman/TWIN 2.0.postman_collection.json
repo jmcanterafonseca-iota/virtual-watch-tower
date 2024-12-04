@@ -1,0 +1,2174 @@
+{
+	"info": {
+		"_postman_id": "5780e194-7b11-451e-b7c4-2e3b03b45069",
+		"name": "TWIN 2.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "579084"
+	},
+	"item": [
+		{
+			"name": "Registry",
+			"item": [
+				{
+					"name": "Registry Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://registry.lab.gaia-x.eu/development",
+							"protocol": "https",
+							"host": [
+								"registry",
+								"lab",
+								"gaia-x",
+								"eu"
+							],
+							"path": [
+								"development"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registry - Well known DID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/.well-known/did.json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								".well-known",
+								"did.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registry - Credential - Config",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/configurations/credentials",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"configurations",
+								"credentials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trust Anchors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/trustAnchor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"trustAnchor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trust Anchor - Check",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"certificate\": \"MIIFRDCCA6ygAwIBAgIRAOx+3OTycQ0GT8MTYxS42C4wDQYJKoZIhvcNAQELBQAwgbkxHjAcBgNVBAoTFW1rY2VydCBkZXZlbG9wbWVudCBDQTFHMEUGA1UECww+am1jYW50ZXJhZm9uc2VjYUBKb3Nlcy1NYWNCb29rLVByby5sb2NhbCAoSm9zZSBNYW51ZWwgQ2FudGVyYSkxTjBMBgNVBAMMRW1rY2VydCBqbWNhbnRlcmFmb25zZWNhQEpvc2VzLU1hY0Jvb2stUHJvLmxvY2FsIChKb3NlIE1hbnVlbCBDYW50ZXJhKTAeFw0yNDA3MDgwOTE4NTVaFw0zNDA3MDgwOTE4NTVaMIG5MR4wHAYDVQQKExVta2NlcnQgZGV2ZWxvcG1lbnQgQ0ExRzBFBgNVBAsMPmptY2FudGVyYWZvbnNlY2FASm9zZXMtTWFjQm9vay1Qcm8ubG9jYWwgKEpvc2UgTWFudWVsIENhbnRlcmEpMU4wTAYDVQQDDEVta2NlcnQgam1jYW50ZXJhZm9uc2VjYUBKb3Nlcy1NYWNCb29rLVByby5sb2NhbCAoSm9zZSBNYW51ZWwgQ2FudGVyYSkwggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQC+8Fnho57kylkmHP6VXoNBPSual69fC+7IDzLl7QYjrghJbrvPDpDQqGhiy5009YChdnjm5DgtlQBJWSmMleeYkY7+Fbt1v61pO2pXten63Qg6vCug21nM0TTuwbdEsRZOgaFEP8W3il/OFzYDq4lfj5Rel3fwrbA5VA7OWTjZk/catB9KO+KNsapvulf1lznQROa37OIV1tNe8gRLL0oqdeD5FmmHueTMqM3rRVQu3sZcDHp3p6S3MyFgvzuX6RpIIH3F2Bj14dlB+BbJsP5lNWS8PtWl5/s/I7x8P5MDgCQFJK/rEROWDlaLZgjy/n2Rg9nu0DGvSc1A2799IDy17/bA9aDvId27EcEIB2uR/UmTFN2rS4tuHsRubcmZtIauSW8f3wCLMrsOZiQstKmyhbiUv1TdY1m55P0k0RtOeZ23TiSVT+gKU+a7FAPw+VvN9RVjslCRzQCGzIEsC4Oj7SiEybq5LXhjyzGZCEf9414woEQLAUQ/Z5E3uF5KzxkCAwEAAaNFMEMwDgYDVR0PAQH/BAQDAgIEMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFNZyr17tBMRn8/jT8LXEZtDx2AlCMA0GCSqGSIb3DQEBCwUAA4IBgQCJFZ3Vz7qD/3Y+8+1CFYzbvYPotNyG84Blx/3bGfhDnUfnkkl/rYrnqagoYbl7P/sNJNEEfEv8enFvtCunrAhhlH/H3ZSWEj6TtRpyF19EiMJh+9PQFVVKTDJS6m4wz7fEKJZigV1tPuLQIBVv9JxvBV17jxgio10Pq1+l6rNbE0fezxgEZkcTS9/altL6GC6MJnsoj8FcQqRYMgWYlQLcd1GaAwdZU1psezVdCwQGqe85RLSLHNALJ+KLMJsha/wQvX6GkEsTzEykLScLsjKrINGQZN3pEaAD+emUhhn0/V2CIYZRqpIK0YOOEH0wLCdZHPQHQ0RvHTiewB/WQ2jF9pjRZXSU7RP1EBDsHAvk+YoCIcPSO8x0j5DPnjYTYE2j5OugTA+A7aXR4ICJYsjG+dz+7yfrADmWB29dKKD/PA2xKf15r0UY8SgeNF9/LSdQBmR5peLok4knlsG70RaHUt2BdEspw/EmI/s2lDBmWdYjVW2t+jU15K2VmJnZbo4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/trustAnchor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"trustAnchor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trusted Issuers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/trusted-issuers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"trusted-issuers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trusted Schemas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/schemas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"schemas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shapes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/shapes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shapes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lab: Shape Trust Framework",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://registry.lab.gaia-x.eu/development/api/trusted-shape-registry/v1/shapes/jsonld/trustframework#",
+							"protocol": "https",
+							"host": [
+								"registry",
+								"lab",
+								"gaia-x",
+								"eu"
+							],
+							"path": [
+								"development",
+								"api",
+								"trusted-shape-registry",
+								"v1",
+								"shapes",
+								"jsonld",
+								"trustframework"
+							],
+							"hash": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Compliance",
+			"item": [
+				{
+					"name": "DID Issuer HTTPs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/.well-known/did.json",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								".well-known",
+								"did.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compliance Gaia-X Lab",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "compliance.lab.gaia-x.eu/v2",
+							"host": [
+								"compliance",
+								"lab",
+								"gaia-x",
+								"eu"
+							],
+							"path": [
+								"v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compliance Info",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Credential Offer",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/jwt",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "eyJhbGciOiJFZERTQSIsImlzcyI6ImRpZDppb3RhOmVic2k6MHg3NGU0YWMxYWJjMDY0YjNmZWExZmViMDhkZGUyMDIyMDQxOGM0YWJkYjQ3ODczODA3NWI4NjkxMDAxNDNlNDA4Iiwia2lkIjoiZGlkOmlvdGE6ZWJzaToweDc0ZTRhYzFhYmMwNjRiM2ZlYTFmZWIwOGRkZTIwMjIwNDE4YzRhYmRiNDc4NzM4MDc1Yjg2OTEwMDE0M2U0MDgjbFlBRVBRR2RjSDljckcwanFCX05jb1lVWVRueFUtQlgxT0k1UEgzYkhqdyIsInR5cCI6IkpXVCJ9.eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvbnMvY3JlZGVudGlhbHMvdjIiXSwiZXhwIjoxNzYwNjI3ODQ5LCJob2xkZXIiOiJkaWQ6aW90YTplYnNpOjB4NzRlNGFjMWFiYzA2NGIzZmVhMWZlYjA4ZGRlMjAyMjA0MThjNGFiZGI0Nzg3MzgwNzViODY5MTAwMTQzZTQwOCIsImlhdCI6MTcyOTA5MTg0OSwiaWQiOiJodHRwczovL2V4YW1wbGUub3JnL2lvdGEvb25ib2FyZGluZy9wcmVzZW50YXRpb25zLzE3MjkwOTE4NDkiLCJ0eXBlIjpbIlZlcmlmaWFibGVQcmVzZW50YXRpb24iXSwidmVyaWZpYWJsZUNyZWRlbnRpYWwiOlt7IkBjb250ZXh0IjpbImh0dHBzOi8vd3d3LnczLm9yZy9ucy9jcmVkZW50aWFscy92MiJdLCJpZCI6ImRhdGE6YXBwbGljYXRpb24vdmMrbGQranNvbitqd3Q7ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbWx6Y3lJNkltUnBaRHAzWldJNmFXOTBZV3hsWkdkbGNpNW5hWFJvZFdJdWFXODZaV0p6YVMxemRHRnlaSFZ6ZEMxamIyMXdiMjVsYm5Sek9uQjFZbXhwWXpwbllXbGhMWGc2ZDJWaU9uUjNhVzQ2ZEhKaFpHVnBaQ0lzSW10cFpDSTZJbVJwWkRwM1pXSTZhVzkwWVd4bFpHZGxjaTVuYVhSb2RXSXVhVzg2WldKemFTMXpkR0Z5WkhWemRDMWpiMjF3YjI1bGJuUnpPbkIxWW14cFl6cG5ZV2xoTFhnNmQyVmlPblIzYVc0NmRISmhaR1ZwWkNNelozTjRiM2hJVHpWTFoxUnNVakpxVUZkS2VXczBTRTlYY0hwc2VsbHpTRzVWY1ZsUFJXVk9VVTh3SWl3aWRIbHdJam9pU2xkVUluMC5leUpBWTI5dWRHVjRkQ0k2V3lKb2RIUndjem92TDNkM2R5NTNNeTV2Y21jdmJuTXZZM0psWkdWdWRHbGhiSE12ZGpJaUxDSm9kSFJ3Y3pvdkwzY3phV1F1YjNKbkwzTmxZM1Z5YVhSNUwzTjFhWFJsY3k5cWQzTXRNakF5TUM5Mk1TSXNJbWgwZEhCek9pOHZkek5wWkM1dmNtY3ZaMkZwWVMxNEwyUmxkbVZzYjNCdFpXNTBJeUpkTENKamNtVmtaVzUwYVdGc1UzVmlhbVZqZENJNmV5Sm5lRHBvWldGa2NYVmhjblJsY2tGa1pISmxjM01pT25zaVozZzZZMjkxYm5SeWVWTjFZbVJwZG1semFXOXVRMjlrWlNJNklsTkZMVUZDSW4wc0ltZDRPbXhsWjJGc1FXUmtjbVZ6Y3lJNmV5Sm5lRHBqYjNWdWRISjVVM1ZpWkdsMmFYTnBiMjVEYjJSbElqb2lVMFV0UVVJaWZTd2laM2c2YkdWbllXeE9ZVzFsSWpvaVJYaGhiWEJzWlNCV2FYSjBkV0ZzSUZkaGRHTm9JRlJ2ZDJWeUlERWlMQ0puZURwc1pXZGhiRkpsWjJsemRISmhkR2x2Yms1MWJXSmxjaUk2ZXlKcFpDSTZJbWgwZEhCek9pOHZhbTFqWVc1MFpYSmhabTl1YzJWallTMXBiM1JoTG1kcGRHaDFZaTVwYnk5MmFYSjBkV0ZzTFhkaGRHTm9MWFJ2ZDJWeUwzQjFZbXhwWXk5amNtVmtaVzUwYVdGc2N5OTJkM1F0TVM5c1pXZGhiRkpsWjJsemRISmhkR2x2Yms1MWJXSmxjbFpETG1wemIyNGlmU3dpYVdRaU9pSmthV1E2YVc5MFlUcGxZbk5wT2pCNE56UmxOR0ZqTVdGaVl6QTJOR0l6Wm1WaE1XWmxZakE0WkdSbE1qQXlNakEwTVRoak5HRmlaR0kwTnpnM016Z3dOelZpT0RZNU1UQXdNVFF6WlRRd09DSXNJblI1Y0dVaU9pSm5lRHBNWldkaGJGQmhjblJwWTJsd1lXNTBJbjBzSW1saGRDSTZNVGN5T1RBNE9UWTBOQ3dpYVdRaU9pSm9kSFJ3Y3pvdkwycHRZMkZ1ZEdWeVlXWnZibk5sWTJFdGFXOTBZUzVuYVhSb2RXSXVhVzh2ZG1seWRIVmhiQzEzWVhSamFDMTBiM2RsY2k5d2RXSnNhV012WTNKbFpHVnVkR2xoYkhNdmRuZDBMVEV2YkdWbllXeFFZWEowYVdOcGNHRnVkRlpETG1wemIyNGlMQ0pwYzNOMVpYSWlPaUprYVdRNmQyVmlPbWx2ZEdGc1pXUm5aWEl1WjJsMGFIVmlMbWx2T21WaWMya3RjM1JoY21SMWMzUXRZMjl0Y0c5dVpXNTBjenB3ZFdKc2FXTTZaMkZwWVMxNE9uZGxZanAwZDJsdU9uUnlZV1JsYVdRaUxDSjBlWEJsSWpwYklsWmxjbWxtYVdGaWJHVkRjbVZrWlc1MGFXRnNJbDBzSW5aaGJHbGtSbkp2YlNJNklqSXdNalF0TVRBdE1UWlVNVFE2TkRBNk5EUmFJaXdpZG1Gc2FXUlZiblJwYkNJNklqSXdNalV0TVRBdE1UWlVNVFE2TkRBNk5EUmFJbjAuZG9CMDl0cWZhRVZOdjR2Rzl6TEduR1BUblN5WDFDX3ZVRnowRzVFd2xMbE81MHA5b1djczZBd0lOSk1VZWdjVjZhc2RmVnVHOUQ2aTJsQUEwRlpIVlJrck14S0hDR2RlcWtjVFpfMXNOWXM5eWxzYzhNbnNtbk1KZ1VfcUo2LURVM2xvQlVLS3lxTEJfNUV2dVJVOHlncnJwdFlGQ19lbkRzd1dqblFETlc3OGp4Ulg3X0FKSTByQ003NmttME1fM09vLXlVOGh5d1Q3U0xXMURrbnprUml5a01GZnU3dWVJVVM2c2JTcHI1LWx6MFJnaXhpOHhVOUxqcGJBUU9HVEdVOHI3Q3BPQjRnenI4MDl0a0ZVbTRrY3ZNd2tnUGgyU192STJPYUpUTXpob1hlVnVEY0tsekZjSTBWbWhWVmFIbnlQNlNDMndabDhWUWdFRUJmVnNnIiwidHlwZSI6IkVudmVsb3BlZFZlcmlmaWFibGVDcmVkZW50aWFsIn0seyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvbnMvY3JlZGVudGlhbHMvdjIiXSwiaWQiOiJkYXRhOmFwcGxpY2F0aW9uL3ZjK2xkK2pzb24rand0O2V5SmhiR2NpT2lKU1V6STFOaUlzSW1semN5STZJbVJwWkRwM1pXSTZhVzkwWVd4bFpHZGxjaTVuYVhSb2RXSXVhVzg2WldKemFTMXpkR0Z5WkhWemRDMWpiMjF3YjI1bGJuUnpPbkIxWW14cFl6cG5ZV2xoTFhnNmQyVmlPblIzYVc0NmJtOTBZWEo1SWl3aWEybGtJam9pWkdsa09uZGxZanBwYjNSaGJHVmtaMlZ5TG1kcGRHaDFZaTVwYnpwbFluTnBMWE4wWVhKa2RYTjBMV052YlhCdmJtVnVkSE02Y0hWaWJHbGpPbWRoYVdFdGVEcDNaV0k2ZEhkcGJqcHViM1JoY25ramFYZHZhVEpvVTFNMmMwSmxTVGRsYVcxclozRjVXSGxDTVhkRlZVWlJORzlGVTFSaE4yTnlaSHBmY3lJc0luUjVjQ0k2SWtwWFZDSjkuZXlKQVkyOXVkR1Y0ZENJNld5Sm9kSFJ3Y3pvdkwzZDNkeTUzTXk1dmNtY3Zibk12WTNKbFpHVnVkR2xoYkhNdmRqSWlMQ0pvZEhSd2N6b3ZMM2N6YVdRdWIzSm5MM05sWTNWeWFYUjVMM04xYVhSbGN5OXFkM010TWpBeU1DOTJNU0lzSW1oMGRIQnpPaTh2ZHpOcFpDNXZjbWN2WjJGcFlTMTRMMlJsZG1Wc2IzQnRaVzUwSXlKZExDSmpjbVZrWlc1MGFXRnNVM1ZpYW1WamRDSTZleUpBWTI5dWRHVjRkQ0k2V3lKb2RIUndjem92TDNKbFoybHpkSEo1TG14aFlpNW5ZV2xoTFhndVpYVXZaR1YyWld4dmNHMWxiblF2WVhCcEwzUnlkWE4wWldRdGMyaGhjR1V0Y21WbmFYTjBjbmt2ZGpFdmMyaGhjR1Z6TDJwemIyNXNaQzkwY25WemRHWnlZVzFsZDI5eWF5TWlYU3dpWjNnNlkyOTFiblJ5ZVVOdlpHVWlPaUpUUlNJc0ltZDRPbXhsYVVOdlpHVWlPaUkxTkRrek1EQlpNRkZVV1ZCT1IwWk1WREV4TmlJc0ltZDRPbk4xWW1ScGRtbHphVzl1UTI5MWJuUnllVU52WkdVaU9pSlRSUzFCUWlJc0ltbGtJam9pWkdsa09tbHZkR0U2WldKemFUb3dlRGMwWlRSaFl6RmhZbU13TmpSaU0yWmxZVEZtWldJd09HUmtaVEl3TWpJd05ERTRZelJoWW1SaU5EYzROek00TURjMVlqZzJPVEV3TURFME0yVTBNRGdpTENKMGVYQmxJam9pWjNnNmJHVm5ZV3hTWldkcGMzUnlZWFJwYjI1T2RXMWlaWElpZlN3aVpYWnBaR1Z1WTJVaU9uc2laM2c2WlhacFpHVnVZMlZQWmlJNklreEZTVjlEVDBSRklpd2laM2c2WlhacFpHVnVZMlZWVWt3aU9pSm9kSFJ3Y3pvdkwzTmxZWEpqYUM1bmJHVnBaaTV2Y21jdkl5OXlaV052Y21Rdk5UUTVNekF3V1RCUlZGbFFUa2RHVEZReE1UWWlMQ0puZURwbGVHVmpkWFJwYjI1RVlYUmxJam9pTWpBeU5DMHhNQzB4TmxReE1UbzBOam95TXk0d016SXJNREE2TURBaWZTd2lhV0YwSWpveE56STVNRGc1T1RNekxDSnBaQ0k2SW1oMGRIQnpPaTh2YW0xallXNTBaWEpoWm05dWMyVmpZUzFwYjNSaExtZHBkR2gxWWk1cGJ5OTJhWEowZFdGc0xYZGhkR05vTFhSdmQyVnlMM0IxWW14cFl5OWpjbVZrWlc1MGFXRnNjeTkyZDNRdE1TOXNaV2RoYkZKbFoybHpkSEpoZEdsdmJrNTFiV0psY2xaRExtcHpiMjRpTENKcGMzTjFaWElpT2lKa2FXUTZkMlZpT21sdmRHRnNaV1JuWlhJdVoybDBhSFZpTG1sdk9tVmljMmt0YzNSaGNtUjFjM1F0WTI5dGNHOXVaVzUwY3pwd2RXSnNhV002WjJGcFlTMTRPbmRsWWpwMGQybHVPbTV2ZEdGeWVTSXNJblI1Y0dVaU9sc2lWbVZ5YVdacFlXSnNaVU55WldSbGJuUnBZV3dpWFN3aWRtRnNhV1JHY205dElqb2lNakF5TkMweE1DMHhObFF4TkRvME5Ub3pNMW9pTENKMllXeHBaRlZ1ZEdsc0lqb2lNakF5TlMweE1DMHhObFF4TkRvME5Ub3pNMW9pZlEuTVlIeVlGbXdWQXdjbThFcE16ZkN0d19tU3pVZ2haWDdlb1ZLSnpSaWpxSGd5ekhhSWdJbm5ubnhlaUk1a1Jhb3AzUERaUVlIVVZfbDZoUjRhNHFMVTJlaVNmM2NSU0g0Nm11dlBMMk50Tkt6US1DOUhWcnNWQl9fQjRoTzNKUlZHOXQ3QkFHVlBETEhzY3BzWGlHd0hJeGpjaHh3MnVEbldHVFlJWGlUZl9kVEVURmMxZGpabGp0LVI4WjBDZUY1VV85U2JfTS1oUVMybGFCQndHUlVwYkkyNTVacmE0THlrcVVzZ0hRY3FUS082c3U0TU1xN3ZjV0xGc0c0VE96MHdmUnJRX3NFZ1BMSE05VjJadl8xY2I2NTBRR0dOcDh6dTZBdG81ZmJDRS00cERjZllNVjR2UVdfT0ZkMktfNU1ndG1VT0FrRjFCUTh1Ymw0TU8wYjh3IiwidHlwZSI6IkVudmVsb3BlZFZlcmlmaWFibGVDcmVkZW50aWFsIn0seyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvbnMvY3JlZGVudGlhbHMvdjIiXSwiaWQiOiJkYXRhOmFwcGxpY2F0aW9uL3ZjK2xkK2pzb24rand0O2V5SmhiR2NpT2lKRlpFUlRRU0lzSW1semN5STZJbVJwWkRwcGIzUmhPbVZpYzJrNk1IZzNOR1UwWVdNeFlXSmpNRFkwWWpObVpXRXhabVZpTURoa1pHVXlNREl5TURReE9HTTBZV0prWWpRM09EY3pPREEzTldJNE5qa3hNREF4TkRObE5EQTRJaXdpYTJsa0lqb2laR2xrT21sdmRHRTZaV0p6YVRvd2VEYzBaVFJoWXpGaFltTXdOalJpTTJabFlURm1aV0l3T0dSa1pUSXdNakl3TkRFNFl6UmhZbVJpTkRjNE56TTRNRGMxWWpnMk9URXdNREUwTTJVME1EZ2piRmxCUlZCUlIyUmpTRGxqY2tjd2FuRkNYMDVqYjFsVldWUnVlRlV0UWxneFQwazFVRWd6WWtocWR5SXNJblI1Y0NJNklrcFhWQ0o5LmV5SkFZMjl1ZEdWNGRDSTZXeUpvZEhSd2N6b3ZMM2QzZHk1M015NXZjbWN2Ym5NdlkzSmxaR1Z1ZEdsaGJITXZkaklpTENKb2RIUndjem92TDNjemFXUXViM0puTDNObFkzVnlhWFI1TDNOMWFYUmxjeTlxZDNNdE1qQXlNQzkyTVNJc0ltaDBkSEJ6T2k4dmR6TnBaQzV2Y21jdloyRnBZUzE0TDJSbGRtVnNiM0J0Wlc1MEl5SmRMQ0pqY21Wa1pXNTBhV0ZzVTNWaWFtVmpkQ0k2ZXlKbmVEcDBaWEp0YzBGdVpFTnZibVJwZEdsdmJuTWlPaUpVYUdVZ1VFRlNWRWxEU1ZCQlRsUWdjMmxuYm1sdVp5QjBhR1VnVTJWc1ppMUVaWE5qY21sd2RHbHZiaUJoWjNKbFpYTWdZWE1nWm05c2JHOTNjenBjYmkwZ2RHOGdkWEJrWVhSbElHbDBjeUJrWlhOamNtbHdkR2x2Ym5NZ1lXSnZkWFFnWVc1NUlHTm9ZVzVuWlhNc0lHSmxJR2wwSUhSbFkyaHVhV05oYkN3Z2IzSm5ZVzVwZW1GMGFXOXVZV3dzSUc5eUlHeGxaMkZzSUMwZ1pYTndaV05wWVd4c2VTQmlkWFFnYm05MElHeHBiV2wwWldRZ2RHOGdZMjl1ZEhKaFkzUjFZV3dnYVc0Z2NtVm5ZWEprY3lCMGJ5QjBhR1VnYVc1a2FXTmhkR1ZrSUdGMGRISnBZblYwWlhNZ2NISmxjMlZ1ZENCcGJpQjBhR1VnWkdWelkzSnBjSFJwYjI1ekxseHVYRzVVYUdVZ2EyVjVjR0ZwY2lCMWMyVmtJSFJ2SUhOcFoyNGdWbVZ5YVdacFlXSnNaU0JEY21Wa1pXNTBhV0ZzY3lCM2FXeHNJR0psSUhKbGRtOXJaV1FnZDJobGNtVWdWRmRKVGlCR2IzVnVaR0YwYVc5dUlHSmxZMjl0WlhNZ1lYZGhjbVVnYjJZZ1lXNTVJR2x1WVdOamRYSmhkR1VnYzNSaGRHVnRaVzUwY3lCcGJpQnlaV2RoY21SeklIUnZJSFJvWlNCamJHRnBiWE1nZDJocFkyZ2djbVZ6ZFd4MElHbHVJR0VnYm05dUxXTnZiWEJzYVdGdVkyVWdkMmwwYUNCMGFHVWdWSEoxYzNRZ1JuSmhiV1YzYjNKcklHRnVaQ0J3YjJ4cFkza2djblZzWlhNZ1pHVm1hVzVsWkNCcGJpQjBhR1VnVUc5c2FXTjVJRkoxYkdWeklHRnVaQ0JNWVdKbGJHeHBibWNnUkc5amRXMWxiblFnS0ZCU1RFUXBMaUlzSW1sa0lqb2laR2xrT21sdmRHRTZaV0p6YVRvd2VEYzBaVFJoWXpGaFltTXdOalJpTTJabFlURm1aV0l3T0dSa1pUSXdNakl3TkRFNFl6UmhZbVJpTkRjNE56TTRNRGMxWWpnMk9URXdNREUwTTJVME1EZ2lMQ0owZVhCbElqb2laM2c2UjJGcFlWaFVaWEp0YzBGdVpFTnZibVJwZEdsdmJuTWlmU3dpYVdGMElqb3hOekk1TURnNE1UZzJMQ0pwWkNJNkltaDBkSEJ6T2k4dmFtMWpZVzUwWlhKaFptOXVjMlZqWVMxcGIzUmhMbWRwZEdoMVlpNXBieTkyYVhKMGRXRnNMWGRoZEdOb0xYUnZkMlZ5TDNCMVlteHBZeTlqY21Wa1pXNTBhV0ZzY3k5MmQzUXRNUzkwWlhKdGMwRnVaRU52Ym1ScGRHbHZibk5XUXk1cWMyOXVJaXdpYVhOemRXVnlJam9pWkdsa09tbHZkR0U2WldKemFUb3dlRGMwWlRSaFl6RmhZbU13TmpSaU0yWmxZVEZtWldJd09HUmtaVEl3TWpJd05ERTRZelJoWW1SaU5EYzROek00TURjMVlqZzJPVEV3TURFME0yVTBNRGdpTENKMGVYQmxJanBiSWxabGNtbG1hV0ZpYkdWRGNtVmtaVzUwYVdGc0lsMHNJblpoYkdsa1JuSnZiU0k2SWpJd01qUXRNVEF0TVRaVU1UUTZNVFk2TWpaYUlpd2lkbUZzYVdSVmJuUnBiQ0k2SWpJd01qVXRNVEF0TVRaVU1UUTZNVFk2TWpaYUluMC5YOWRtN05GV0hJdjdWeUR6ZnozMzFTUXV0MVN4LXNPRXp6Z0tDV3R6MlpOQTA5dFZ6SkdTNTJQRVVfWGNaX2hsRkRyMDNvcDJvYVV2VG9MSS1jbEhCZyIsInR5cGUiOiJFbnZlbG9wZWRWZXJpZmlhYmxlQ3JlZGVudGlhbCJ9XX0.NtAcNnPs261x491J8btXiceculYrkXxLJ8Je1ORD5MIphqej8XReORJ9VkU9muqxfY-uZU-xCyw2YzU2Xuy3Dw",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3005/api/credential-offers?vcid=https://vwt-1.example.org/credentials/compliance-credential.json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"credential-offers"
+							],
+							"query": [
+								{
+									"key": "vcid",
+									"value": "https://vwt-1.example.org/credentials/compliance-credential.json"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notary",
+			"item": [
+				{
+					"name": "Notary Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Service DID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/.well-known/did.json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								".well-known",
+								"did.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get VC",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/api/registration-numbers/lei-code/9695007586GCAKPYJ703?vcId=https://example.org/credentials/123&subjectId=https://example.org/subjects/123&",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"registration-numbers",
+								"lei-code",
+								"9695007586GCAKPYJ703"
+							],
+							"query": [
+								{
+									"key": "vcId",
+									"value": "https://example.org/credentials/123"
+								},
+								{
+									"key": "subjectId",
+									"value": "https://example.org/subjects/123"
+								},
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get VC VAT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/api/registration-numbers/vat-id/DE329624902?vcId=https://example.org/credentials/123&subjectId=https://example.org/subjects/123&",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"registration-numbers",
+								"vat-id",
+								"DE329624902"
+							],
+							"query": [
+								{
+									"key": "vcId",
+									"value": "https://example.org/credentials/123"
+								},
+								{
+									"key": "subjectId",
+									"value": "https://example.org/subjects/123"
+								},
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GLEIF",
+			"item": [
+				{
+					"name": "Issuers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.gleif.org/api/v1/lei-issuers",
+							"protocol": "https",
+							"host": [
+								"api",
+								"gleif",
+								"org"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lei-issuers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Issuer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.gleif.org/api/v1/lei-records/529900W18LQJJN6SJ336",
+							"protocol": "https",
+							"host": [
+								"api",
+								"gleif",
+								"org"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lei-records",
+								"529900W18LQJJN6SJ336"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gaia-x-Catalogue",
+			"item": [
+				{
+					"name": "Credentials",
+					"item": [
+						{
+							"name": "Credentials",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/self-descriptions?withContent=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"self-descriptions"
+									],
+									"query": [
+										{
+											"key": "withContent",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Participant Credential",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/jwt",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://www.w3.org/2018/credentials/v1\",\n        \"https://w3id.org/security/suites/jws-2020/v1\"\n    ],\n    \"id\": \"urn:uuid:3978344f-8596-4c3a-a978-8fcaba3903c5\",\n    \"type\": [\n        \"VerifiablePresentation\"\n    ],\n    \"verifiableCredential\": [\n        {\n            \"@context\": [\n                \"https://www.w3.org/2018/credentials/v1\",\n                \"https://w3id.org/security/suites/jws-2020/v1\",\n                \"https://registry.lab.gaia-x.eu/development/api/trusted-shape-registry/v1/shapes/jsonld/trustframework#\"\n            ],\n            \"type\": [\n                \"VerifiableCredential\"\n            ],\n            \"id\": \"https://example.org/twin/credentials/c1\",\n            \"issuer\": \"did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:tradeid\",\n            \"issuanceDate\": \"2024-08-07T11:49:37.493Z\",\n            \"credentialSubject\": {\n                \"type\": \"gx:LegalParticipant\",\n                \"gx:legalName\": \"Gaia-X European Association for Data and Cloud AISBL\",\n                \"gx:legalRegistrationNumber\": {\n                    \"id\": \"https://gaia-x.eu/legalRegistrationNumberVC.json\"\n                },\n                \"gx:headquarterAddress\": {\n                    \"gx:countrySubdivisionCode\": \"BE-BRU\"\n                },\n                \"gx:legalAddress\": {\n                    \"gx:countrySubdivisionCode\": \"BE-BRU\"\n                },\n                \"id\": \"did:iota:ebsi:0x373d23ba4e92548d68c814f6833f4bdbfcf030bbb8f49b0c7f87bf126b8df1f7\"\n            },\n            \"proof\": {\n                \"type\": \"JsonWebSignature2020\",\n                \"created\": \"2024-08-07T13:49:37.516+02:00\",\n                \"proofPurpose\": \"assertionMethod\",\n                \"verificationMethod\": \"did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:tradeid#3gsxoxHO5KgTlR2jPWJyk4HOWpzlzYsHnUqYOEeNQO0\",\n                \"@context\": [\n                    \"https://www.w3.org/2018/credentials/v1\",\n                    \"https://w3id.org/security/suites/jws-2020/v1\"\n                ],\n                \"jws\": \"eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..jWUtbl4XSekXYvw7TrJWGV_SEp0nnNAWazTsBhaMkPgoKQmyOxC4jq8DKoIru1OcaE34AYQqTJlgXtIPNDSjcJPOLXlNb60tLLt0BzvCiIR7erTBTofK7cupNt5GLIeVAF8xfGfsgJBkxtoK3XdQKM449Jj7uePJ27F2LS97S5OSYh06QlAKNabR6lvGS7dP-dk1afBKrYMMJ0F-RMn4l0KIEkHAw4JhY4i1fvxSF6vOZNvigHZFiSr7yAd93eRJ8kzSpXIRbS7XCMHnKlXe8mcCl3QlI0qbJipDFuIzheOpNITs8p7peHUCz0WQv_0zB9ErhXE_i54gwiq1e70e9Q\"\n            }\n        }\n    ],\n    \"holder\": \"did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:tradeid\",\n    \"proof\": {\n        \"type\": \"JsonWebSignature2020\",\n        \"created\": \"2024-08-07T13:50:42.341+02:00\",\n        \"proofPurpose\": \"assertionMethod\",\n        \"verificationMethod\": \"did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:tradeid#3gsxoxHO5KgTlR2jPWJyk4HOWpzlzYsHnUqYOEeNQO0\",\n        \"jws\": \"eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..DwNKIgLiRZYQ8eknaGcPq6mkoApmxhxNdy0KoH1m4XSoyus0vAyMckVdx48iRvxVRTpS-yNcHzTmtP8xRBrKxKFFobt1FDn3SRYwhDJYm76qTP6q1e9qkHp1lC5wt4aqlHmN1aieUh5ckE-On07s7GoatG3xy-6xv1j6ALMC8vkuGGFYuiX1JNVMb3a3FbQSf0sWuM9ngD8JW4gJ6wzK8hMp1zkd4qKd6u5YYqOcdN1dlQ5pHHanAV3Bz_XVEKSZK8kBtuRH-hWGNd9EKXKSX3d4ybXgMR3o39C2Ba0sAYR0bN8V0W1fdHjKOP7mS4E1U_jQrvyEMRSnabmaf7-Anw\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/self-descriptions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"self-descriptions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Configuration",
+					"item": [
+						{
+							"name": "Roles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/roles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Participants",
+					"item": [
+						{
+							"name": "List participants",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3020/fed-catalogue/participants",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3020",
+									"path": [
+										"fed-catalogue",
+										"participants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Participant By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3020/fed-catalogue/participants?id=did:iota:ebsi:0xb62afcd0150d048ea0679af61d28d0eb1ad1b969f411b03997194df232b27383",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3020",
+									"path": [
+										"fed-catalogue",
+										"participants"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "did:iota:ebsi:0xb62afcd0150d048ea0679af61d28d0eb1ad1b969f411b03997194df232b27383"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Participants by LRN",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3020/fed-catalogue/participants?lrnType=KRA_PIN_NUMBER&legalRegistrationNumber=P051219453I",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3020",
+									"path": [
+										"fed-catalogue",
+										"participants"
+									],
+									"query": [
+										{
+											"key": "lrnType",
+											"value": "KRA_PIN_NUMBER"
+										},
+										{
+											"key": "legalRegistrationNumber",
+											"value": "P051219453I"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Participant",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"zzz\",\n  \"name\": \"Maasai Flowers Ltd\",\n  \"publicKey\": \"\",\n  \"selfDescription\": \"did:web:iotaledger.github.io:ebsi-stardust-components:public:gaia-x:web:twin:tradeid\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/participants",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"participants"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Resource Owner Authentication",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "P7LtfPnQiaRe7gGM1ZQ73RDBEMsQ4F4L",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "federated-catalogue",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "audience",
+									"value": "federated-catalogue",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "jose.cantera",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456Aa@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://key-server:8090/realms/gaia-x/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"key-server"
+							],
+							"port": "8090",
+							"path": [
+								"realms",
+								"gaia-x",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{GX_CAT_TOKEN}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Scenario",
+			"item": [
+				{
+					"name": "Maasai",
+					"item": [
+						{
+							"name": "Maasai  -GetConsignment",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{MAASAI_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{SERVICE}}/tlip/consignments/urn:ucr:24KEP051219453I002610796/json-ld",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"tlip",
+										"consignments",
+										"urn:ucr:24KEP051219453I002610796",
+										"json-ld"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Kentrade",
+					"item": [
+						{
+							"name": "Kentrade  - Get Consignment -",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KENTRADE_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{SERVICE}}/tlip/consignments/urn:ucr:24KEP051219453I00261078656715693/json-ld",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"tlip",
+										"consignments",
+										"urn:ucr:24KEP051219453I00261078656715693",
+										"json-ld"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kentrade - New Consignment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KENTRADE_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://www.w3.org/ns/activitystreams\",\n        \"https://w3id.org/opengtsc\",\n        \"https://vocabulary.uncefact.org/unece-context.jsonld\"\n    ],\n    \"generator\": \"{{ID_KENTRADE}}\",\n    \"id\": \"https://tlip.example.org/act7\",\n    \"type\": \"Create\",\n    \"actor\": {\n        \"type\": \"Organization\",\n        \"id\": \"{{ID_MAASAI}}\"\n    },\n    \"object\": {\n        \"type\": \"Consignment\",\n        \"globalId\": \"24KEP051219453I002610786567156931888\",\n        \"exporterParty\": {\n            \"identificationId\": \"P051219453I\",\n            \"identificationType\": \"KRA_PIN_Number\"\n        },\n        \"exportTypeCode\": \"09011100\",\n        \"destinationCountry\": {\n            \"type\": \"Country\",\n            \"countryId\": \"unece:CountryId#GB\"\n        }\n    },\n    \"updated\": \"2024-12-04T12:12:14Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICE}}/tlip-connector/notify",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"notify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kentrade - Retrieve Doc",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KENTRADE_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{SERVICE}}/document-management/document/urn:docId:851:9e6457caa6d05b767ddfc95907766fe69f3e11c9eab42a8118f4c944980e4273?auditableItemGraphId=urn:ucr:24KEP051219453I002610786",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"document-management",
+										"document",
+										"urn:docId:851:9e6457caa6d05b767ddfc95907766fe69f3e11c9eab42a8118f4c944980e4273"
+									],
+									"query": [
+										{
+											"key": "auditableItemGraphId",
+											"value": "urn:ucr:24KEP051219453I002610786"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kentrade - Create Login with Identity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\": \"kentrade@example.org\",\n    \"password\": \"qABCDE@1234567\",\n    \"role\": \"organization\",\n    \"identity\": \"{{ID_KENTRADE}}\",\n    \"keyPair\": {\n        \"privateKey\": \"a9f468cf33ac13cd904f8102c9a14763e3c6766550c517c56dd7eb1cff6984cc\",\n        \"publicKey\": \"6425cb2e9646f442905e2d3a58c607810bca97785056a4794b455eb60d5fb0d5\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICE}}/authentication/login/create",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"authentication",
+										"login",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kentrade - Subscribe",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KRA_NODE_KENTRADE_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://w3id.org/opengtsc\",\n        \"https://vocabulary.uncefact.org/unece-context.jsonld\"\n    ],\n    \"type\": \"Subscription\",\n    \"event\": {\n        \"type\": \"unece:DocumentCodeList#423\",\n        \"item\": {\n            \"type\": \"Consignment\"\n        }\n    },\n    \"notification\": {\n        \"receivedBy\": \"https://tlip-nodes.example.org/kentrade-1\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{KRA_NODE}}/tlip-connector/subscriptions",
+									"host": [
+										"{{KRA_NODE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Connector- Document",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KENTRADE_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{SERVICE}}/tlip-connector/consignment-documents?documentType=337&globalId=24KEP051219453I00261078656715693&identificationType=docId&identificationId=urn:docId:337:ce99d054410990c54118eee300bf4bd5c525595d22210d6a99f8d43735be04ff",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"consignment-documents"
+									],
+									"query": [
+										{
+											"key": "documentType",
+											"value": "337"
+										},
+										{
+											"key": "globalId",
+											"value": "24KEP051219453I00261078656715693"
+										},
+										{
+											"key": "identificationType",
+											"value": "docId"
+										},
+										{
+											"key": "identificationId",
+											"value": "urn:docId:337:ce99d054410990c54118eee300bf4bd5c525595d22210d6a99f8d43735be04ff"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kentrade - List Items",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KENTRADE_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{SERVICE}}/auditable-item-graph/item",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"auditable-item-graph",
+										"item"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kentrade - Cons. Details",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KENTRADE_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://www.w3.org/ns/activitystreams\",\n        \"https://w3id.org/opengtsc\",\n        \"https://vocabulary.uncefact.org/unece-context.jsonld\"\n    ],\n    \"generator\": \"{{ID_KENTRADE}}\",\n    \"type\": \"Add\",\n    \"actor\": {\n       \"type\": \"Organization\",\n        \"id\": \"{{ID_MAASAI}}\"\n    },\n    \"object\": {\n        \"type\": \"Document\",\n        \"documentType\": \"unece:DocumentCodeList#337\",\n        \"identificationId\": \"c-details-24KEP051219453I002637900\",\n        \"identificationType\": \"Consignment-Details\",\n        \"issueDateTime\": \"2024-10-16T10:10:10Z\",\n        \"issuerParty\": {\n            \"id\": \"{{ID_MAASAI}}\"\n        }\n    },\n    \"target\": {\n        \"globalId\": \"24KEP051219453I00261078656715693\",\n        \"type\": \"Consignment\"\n    },\n    \"updated\": \"2024-06-13T12:33:12Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICE}}/tlip-connector/notify",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"notify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Connector - Consignment",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KENTRADE_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{SERVICE}}/tlip-connector/consignments",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"consignments"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "KRA",
+					"item": [
+						{
+							"name": "KRA - Subscribe",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KRA_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://w3id.org/opengtsc\",\n        \"https://vocabulary.uncefact.org/unece-context.jsonld\"\n    ],\n    \"type\": \"Subscription\",\n    \"event\": {\n        \"type\": \"https://w3id.org/opengtsc/created\",\n        \"item\": {\n            \"type\": \"Consignment\"\n        }\n    },\n    \"notification\": {\n        \"receivedBy\": \"https://tlip-nodes.example.org/kra-1\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICE}}/tlip-connector/subscriptions",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "KRA Node Consignment",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KRA_NODE_KRA_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{KRA_NODE}}/tlip/consignments/urn:ucr:24KEP051219453I00261078656715693/json-ld",
+									"host": [
+										"{{KRA_NODE}}"
+									],
+									"path": [
+										"tlip",
+										"consignments",
+										"urn:ucr:24KEP051219453I00261078656715693",
+										"json-ld"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kentrade - Create Login with Identity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\": \"kentrade@example.org\",\n    \"password\": \"qABCDE@1234567\",\n    \"role\": \"organization\",\n    \"identity\": \"{{ID_KENTRADE}}\",\n    \"keyPair\": {\n        \"privateKey\": \"a9f468cf33ac13cd904f8102c9a14763e3c6766550c517c56dd7eb1cff6984cc\",\n        \"publicKey\": \"6425cb2e9646f442905e2d3a58c607810bca97785056a4794b455eb60d5fb0d5\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{KRA_NODE}}/authentication/login/create",
+									"host": [
+										"{{KRA_NODE}}"
+									],
+									"path": [
+										"authentication",
+										"login",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "KRA - Create login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\": \"kra@example.org\",\n    \"password\": \"qABCDE@1234567\",\n    \"role\": \"organization\",\n    \"identity\": \"{{ID_KRA}}\",\n    \"keyPair\": {\n        \"privateKey\": \"91cedc1259538e384d43d8665567344aaf1f90067c900c8202e4ee826fbc33fe\",\n        \"publicKey\": \"f2757e77026233d9a07c9e016590c074bc454690fd6e8272ca1376a373c65aea\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{KRA_NODE}}/authentication/login/create",
+									"host": [
+										"{{KRA_NODE}}"
+									],
+									"path": [
+										"authentication",
+										"login",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "KRA - Export Declaration",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KRA_NODE_KRA_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://www.w3.org/ns/activitystreams\",\n        \"https://w3id.org/opengtsc\",\n        \"https://vocabulary.uncefact.org/unece-context.jsonld\"\n    ],\n    \"generator\": \"{{ID_KRA}}\",\n    \"type\": \"Add\",\n    \"actor\": {\n       \"type\": \"Organization\",\n        \"id\": \"{{ID_MAASAI}}\"\n    },\n    \"object\": {\n        \"type\": \"Document\",\n        \"documentType\": \"unece:DocumentCodeList#423\",\n        \"identificationId\": \"24NBOEX100000639\",\n        \"identificationType\": \"KRA-Export-Declaration\",\n        \"issueDateTime\": \"2021-12-12T10:10:10Z\",\n        \"issuerParty\": {\n            \"id\": \"{{ID_MAASAI}}\"\n        }\n    },\n    \"target\": {\n        \"globalId\": \"24KEP051219453I002610786567156931888\",\n        \"customsId\": \"24NBOEX100000639\",\n        \"type\": \"Consignment\"\n    },\n    \"updated\": \"2024-06-13T12:12:12Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{KRA_NODE}}/tlip-connector/notify",
+									"host": [
+										"{{KRA_NODE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"notify"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Kephis",
+					"item": [
+						{
+							"name": "Kephis - Retrieve Doc",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KEPHIS_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{SERVICE}}/document-management/document/urn:docId:851:88bf138846a0e03f2470dd750782caa3abd2646ba97a70150b86771c24a4462d?auditableItemGraphId=urn:ucr:24KEP051219453I002610786567156",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"document-management",
+										"document",
+										"urn:docId:851:88bf138846a0e03f2470dd750782caa3abd2646ba97a70150b86771c24a4462d"
+									],
+									"query": [
+										{
+											"key": "auditableItemGraphId",
+											"value": "urn:ucr:24KEP051219453I002610786567156"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kephis - Phyto",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{KEPHIS_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://www.w3.org/ns/activitystreams\",\n        \"https://w3id.org/opengtsc\",\n        \"https://vocabulary.uncefact.org/unece-context.jsonld\"\n    ],\n    \"generator\": \"{{ID_KEPHIS}}\",\n    \"type\": \"Add\",\n    \"actor\": {\n       \"type\": \"Organization\",\n        \"id\": \"{{ID_KEPHIS}}\"\n    },\n    \"object\": {\n        \"type\": \"Document\",\n        \"documentType\": \"unece:DocumentCodeList#851\",\n        \"identificationId\": \"KEPHIS/4/2771375/2022\",\n        \"identificationType\": \"Kephis-Phyto\",\n        \"issueDateTime\": \"2021-12-12T10:10:10Z\",\n        \"issuerParty\": {\n            \"id\": \"{{ID_KEPHIS}}\"\n        },\n        \"versionId\": \"6\"\n    },\n    \"target\": {\n        \"globalId\": \"24KEP051219453I002610786567156\",\n        \"type\": \"Consignment\"\n    },\n    \"updated\": \"2021-12-12T12:12:12Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICE}}/tlip-connector/notify",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"notify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kephis - Create Login with Identity Kephis",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\": \"kephis@example.org\",\n    \"password\": \"qABCDE@1234567\",\n    \"role\": \"organization\",\n    \"identity\": \"{{ID_KEPHIS}}\",\n    \"keyPair\": {\n        \"privateKey\": \"99b1515771059322b3dbec4c03c9eeee1a1b140e7bb9de6f61ad43ac3b7d0403\",\n        \"publicKey\": \"1f09daf19d0308f0832c1622759aa4bd628eb15d702f6da7beb459060ad3f091\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICE}}/authentication/login/create",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"authentication",
+										"login",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UK BorderForce",
+					"item": [
+						{
+							"name": "UK BF - Create Login with Identity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\": \"ukborderforce@example.org\",\n    \"password\": \"qABCDE@1234567\",\n    \"role\": \"organization\",\n    \"identity\": \"{{ID_UK_BF}}\",\n    \"keyPair\": {\n        \"privateKey\": \"d99c2d9973b2b4a6175b506f5e27f7536010a13fc4087bbd38ea183090d463e7\",\n        \"publicKey\": \"\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICE}}/authentication/login/create",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"authentication",
+										"login",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UK  Node - Get Consignment",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{UK_NODE_UK_BF_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{UK_BF_NODE}}/tlip/consignments/urn:ucr:24KEP051219453I002610786567156/json-ld",
+									"host": [
+										"{{UK_BF_NODE}}"
+									],
+									"path": [
+										"tlip",
+										"consignments",
+										"urn:ucr:24KEP051219453I002610786567156",
+										"json-ld"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UK BF - Subscribe",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{UK_BF_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://w3id.org/opengtsc\",\n        \"https://vocabulary.uncefact.org/unece-context.jsonld\"\n    ],\n    \"type\": \"Subscription\",\n    \"event\": {\n        \"type\": \"https://w3id.org/opengtsc/created\",\n        \"item\": {\n            \"type\": \"Consignment\",\n            \"destinationCountry\": {\n                \"countryId\": \"unece:CountryId#GB\"\n            }\n        }\n    },\n    \"notification\": {\n        \"receivedBy\": \"https://tlip-nodes.example.org/uk-borderforce-1\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICE}}/tlip-connector/subscriptions",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UK BF - Subscribe Phyto",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{UK_BF_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://w3id.org/opengtsc\",\n        \"https://vocabulary.uncefact.org/unece-context.jsonld\"\n    ],\n    \"type\": \"Subscription\",\n    \"event\": {\n        \"type\": \"unece:DocumentCodeList#851\",\n        \"item\": {\n            \"type\": \"Consignment\",\n            \"destinationCountry\": {\n                \"countryId\": \"unece:CountryId#GB\"\n            }\n        }\n    },\n    \"notification\": {\n        \"receivedBy\": \"https://tlip-nodes.example.org/uk-borderforce-1\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICE}}/tlip-connector/subscriptions",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UK BF - Subscribe Kentrade",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{UK_BF_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://w3id.org/opengtsc\",\n        \"https://vocabulary.uncefact.org/unece-context.jsonld\"\n    ],\n    \"type\": \"Subscription\",\n    \"event\": {\n        \"type\": \"unece:DocumentCodeList#423\",\n        \"item\": {\n            \"type\": \"Consignment\",\n            \"destinationCountry\": {\n                \"countryId\": \"unece:CountryId#GB\"\n            }\n        }\n    },\n    \"notification\": {\n        \"receivedBy\": \"https://tlip-nodes.example.org/uk-borderforce-1\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICE}}/tlip-connector/subscriptions",
+									"host": [
+										"{{SERVICE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Nodes",
+					"item": [
+						{
+							"name": "UK Node - Retrieve Doc",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6aW90YTplYnNpOjB4N2IxOGExMDNlYTY1ZTQ0NTNhYjRlMTYyMDkzMmVlYjJmYTY3ZjlkNTY0NzkxYmZhYWEwNzUzMzNhNzY5Y2U3YSIsInRlbmFudElkIjoiNTAxZGM2Nzc1ZmUzY2UxYmE5NDgzMTllNDNjZmQzMWMzZGU5ODE5ZmJlOTQ5MDE3NWFiZDFhZDYzNWQ5ZTRkNyIsImlhdCI6MTcyNzg3MDE1OCwiZXhwIjoxNzI3ODczNzU4fQ.QHQuGniM7E6s5-xU_yuPkExFwK2IiZ97JlB6C9rm5_s",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{UK_BF_NODE}}/document-management/document/urn:docId:851:57dc4b488ceb05e0c6a7f1dbfc768597283efc20d0df5a37ebe88d486b3a2945?auditableItemGraphId=urn:ucr:24KEP051219453I002610786",
+									"host": [
+										"{{UK_BF_NODE}}"
+									],
+									"path": [
+										"document-management",
+										"document",
+										"urn:docId:851:57dc4b488ceb05e0c6a7f1dbfc768597283efc20d0df5a37ebe88d486b3a2945"
+									],
+									"query": [
+										{
+											"key": "auditableItemGraphId",
+											"value": "urn:ucr:24KEP051219453I002610786"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UK Node Item Details",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{UK_BF_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{UK_BF_NODE}}/auditable-item-graph/item/urn:ucr:24KEP051219453I002610786567156/json-ld",
+									"host": [
+										"{{UK_BF_NODE}}"
+									],
+									"path": [
+										"auditable-item-graph",
+										"item",
+										"urn:ucr:24KEP051219453I002610786567156",
+										"json-ld"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UK BF Bootstrap",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{UK_BF_NODE}}/bootstrap",
+									"host": [
+										"{{UK_BF_NODE}}"
+									],
+									"path": [
+										"bootstrap"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kephis - Phyto",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6aW90YTplYnNpOjB4N2IxOGExMDNlYTY1ZTQ0NTNhYjRlMTYyMDkzMmVlYjJmYTY3ZjlkNTY0NzkxYmZhYWEwNzUzMzNhNzY5Y2U3YSIsInRlbmFudElkIjoiNTAxZGM2Nzc1ZmUzY2UxYmE5NDgzMTllNDNjZmQzMWMzZGU5ODE5ZmJlOTQ5MDE3NWFiZDFhZDYzNWQ5ZTRkNyIsImlhdCI6MTcyNzg2ODc5MywiZXhwIjoxNzI3ODcyMzkzfQ.SSGeaEXl1EyDMHFeTrhqjBLf9sk82xgjkPT6T4rcIIo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://www.w3.org/ns/activitystreams\",\n        \"https://w3id.org/opengtsc\",\n        \"https://vocabulary.uncefact.org/unece-context.jsonld\"\n    ],\n    \"generator\": \"did:iota:ebsi:0x7b18a103ea65e4453ab4e1620932eeb2fa67f9d564791bfaaa075333a769ce7a\",\n    \"type\": \"Add\",\n    \"actor\": {\n       \"type\": \"Organization\",\n        \"id\": \"{{ID_KEPHIS}}\"\n    },\n    \"object\": {\n        \"type\": \"Document\",\n        \"documentType\": \"unece:DocumentCodeList#851\",\n        \"identificationId\": \"KEPHIS/4/2771375/2022\",\n        \"identificationType\": \"Kephis-Phyto\",\n        \"issueDateTime\": \"2021-12-12T10:10:10Z\",\n        \"issuerParty\": {\n            \"id\": \"{{ID_KEPHIS}}\"\n        }\n    },\n    \"target\": {\n        \"globalId\": \"24KEP051219453I002610786\",\n        \"type\": \"Consignment\"\n    },\n    \"updated\": \"2021-12-12T12:12:12Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{UK_BF_NODE}}/tlip-connector/notify",
+									"host": [
+										"{{UK_BF_NODE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"notify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UK Node - Consignment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://www.w3.org/ns/activitystreams\",\n        \"https://w3id.org/opengtsc\",\n        \"https://vocabulary.uncefact.org/unece-context.jsonld\"\n    ],\n    \"generator\": \"did:iota:ebsi:0x7b18a103ea65e4453ab4e1620932eeb2fa67f9d564791bfaaa075333a769ce7a\",\n    \"id\": \"https://tlip.example.org/act7\",\n    \"type\": \"Create\",\n    \"actor\": {\n        \"type\": \"Organization\",\n        \"id\": \"{{ID_MAASAI}}\"\n    },\n    \"object\": {\n        \"type\": \"Consignment\",\n        \"globalId\": \"24KEP051219453I002610786\",\n        \"exporterParty\": {\n            \"identificationId\": \"P051219453I\",\n            \"identificationType\": \"KRA_PIN_Number\"\n        },\n        \"exportTypeCode\": \"09011100\",\n        \"destinationCountry\": {\n            \"type\": \"Country\",\n            \"countryId\": \"unece:CountryId#GB\"\n        }\n    },\n    \"updated\": \"2021-12-12T12:12:14Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{UK_BF_NODE}}/tlip-connector/notify",
+									"host": [
+										"{{UK_BF_NODE}}"
+									],
+									"path": [
+										"tlip-connector",
+										"notify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UK BF - Create Login with Identity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\": \"kephis@example.org\",\n    \"password\": \"qABCDE@1234567\",\n    \"role\": \"organization\",\n    \"identity\": \"{{ID_KEPHIS}}\",\n    \"keyPair\": {\n        \"privateKey\": \"99b1515771059322b3dbec4c03c9eeee1a1b140e7bb9de6f61ad43ac3b7d0403\",\n        \"publicKey\": \"1f09daf19d0308f0832c1622759aa4bd628eb15d702f6da7beb459060ad3f091\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{UK_BF_NODE}}/authentication/login/create",
+									"host": [
+										"{{UK_BF_NODE}}"
+									],
+									"path": [
+										"authentication",
+										"login",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UK Node - Perm Token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{UK_BF_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identity\": \"{{ID_UK_BF}}\",\n    \"name\": \"Permanent Token\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{UK_BF_NODE}}/authentication/token",
+									"host": [
+										"{{UK_BF_NODE}}"
+									],
+									"path": [
+										"authentication",
+										"token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Kentrade - Create Login with Identity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\": \"kentrade@example.org\",\n    \"password\": \"qABCDE@1234567\",\n    \"role\": \"organization\",\n    \"identity\": \"{{ID_KENTRADE}}\",\n    \"keyPair\": {\n        \"privateKey\": \"a9f468cf33ac13cd904f8102c9a14763e3c6766550c517c56dd7eb1cff6984cc\",\n        \"publicKey\": \"6425cb2e9646f442905e2d3a58c607810bca97785056a4794b455eb60d5fb0d5\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{UK_BF_NODE}}/authentication/login/create",
+									"host": [
+										"{{UK_BF_NODE}}"
+									],
+									"path": [
+										"authentication",
+										"login",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UK Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\": \"test2@example.org\",\n    \"passwordHash\": \"04c8a531500d26875e5a7f217ccca63cf4feedc4a316c6bc4fa3c301bc2ff2a3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{UK_BF_NODE}}/authentication/login",
+									"host": [
+										"{{UK_BF_NODE}}"
+									],
+									"path": [
+										"authentication",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login Identity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\": \"test2@example.org\",\n    \"password\": \"qABCDE@1234567\",\n    \"role\": \"organization\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{UK_BF_NODE}}/authentication/login/create",
+									"host": [
+										"{{UK_BF_NODE}}"
+									],
+									"path": [
+										"authentication",
+										"login",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "{{GTSC-API-KEY}}",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "x-api-key",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "TLIP Node",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"emailAddress\": \"ukborderforce@example.org\",\n    \"passwordHash\": \"04c8a531500d26875e5a7f217ccca63cf4feedc4a316c6bc4fa3c301bc2ff2a3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVICE}}/authentication/login",
+							"host": [
+								"{{SERVICE}}"
+							],
+							"path": [
+								"authentication",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permanent Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{KENTRADE_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identity\": \"{{ID_KENTRADE}}\",\n    \"name\": \"Permanent Token\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVICE}}/authentication/token",
+							"host": [
+								"{{SERVICE}}"
+							],
+							"path": [
+								"authentication",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activity Notify - New Consignment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{KENTRADE_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"@context\": [\n        \"https://www.w3.org/ns/activitystreams\",\n        \"https://w3id.org/opengtsc\",\n        \"https://vocabulary.uncefact.org/unece-context.jsonld\"\n    ],\n    \"generator\": \"{{ID_KENTRADE}}\",\n    \"id\": \"https://tlip.example.org/act7\",\n    \"type\": \"Create\",\n    \"actor\": {\n        \"type\": \"Organization\",\n        \"id\": \"{{ID_MAASAI}}\"\n    },\n    \"object\": {\n        \"type\": \"Consignment\",\n        \"globalId\": \"24KEP051219453I002610796\",\n        \"exporterParty\": {\n            \"identificationId\": \"P051219453I\",\n            \"identificationType\": \"KRA_PIN_Number\"\n        },\n        \"exportTypeCode\": \"09011100\",\n        \"destinationCountry\": {\n            \"type\": \"Country\",\n            \"countryId\": \"unece:CountryId#GB\"\n        }\n    },\n    \"updated\": \"2021-12-12T12:12:12Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVICE}}/tlip-connector/notify",
+							"host": [
+								"{{SERVICE}}"
+							],
+							"path": [
+								"tlip-connector",
+								"notify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permissions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{KENTRADE_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVICE}}/permissions/urn:ucr:24KEP051219453I0026107865671569993",
+							"host": [
+								"{{SERVICE}}"
+							],
+							"path": [
+								"permissions",
+								"urn:ucr:24KEP051219453I0026107865671569993"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Permission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{KENTRADE_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identity\": \"did:iota:ebsi:0x3edd589d510d58c211237c79755314d81c228b8bd95559f9ad35911736b3a4aa\",\n    \"type\": \"SHARE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVICE}}/permissions/urn:ucr:24KEP051219453I0026107865671569993",
+							"host": [
+								"{{SERVICE}}"
+							],
+							"path": [
+								"permissions",
+								"urn:ucr:24KEP051219453I0026107865671569993"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "{{GTSC-API-KEY}}",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "x-api-key",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "IOTA Connector - Stardust",
+			"item": [
+				{
+					"name": "GET Item Trail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{KENTRADE_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{GTSC-API-KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVICE}}/iota-connector/items/urn:ucr:24KEP051219453I00261078656715694/trail",
+							"host": [
+								"{{SERVICE}}"
+							],
+							"path": [
+								"iota-connector",
+								"items",
+								"urn:ucr:24KEP051219453I00261078656715694",
+								"trail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Proof",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{KENTRADE_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{GTSC-API-KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVICE}}/iota-connector/items/urn:ucr:24KEP051219453I00261078656715694/poi?versionNumber=2",
+							"host": [
+								"{{SERVICE}}"
+							],
+							"path": [
+								"iota-connector",
+								"items",
+								"urn:ucr:24KEP051219453I00261078656715694",
+								"poi"
+							],
+							"query": [
+								{
+									"key": "versionNumber",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "https://w3id.org/gaia-x/development",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/ld+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://w3id.org/gaia-x/development",
+					"protocol": "https",
+					"host": [
+						"w3id",
+						"org"
+					],
+					"path": [
+						"gaia-x",
+						"development"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LD Context",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/ld+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://w3id.org/gaia-x",
+					"protocol": "https",
+					"host": [
+						"w3id",
+						"org"
+					],
+					"path": [
+						"gaia-x"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "GX_CATALOG_TOKEN",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ5ekhmUWVvemRLMDJuYnN3RDU4OW1rYmdoUzZRNDJIc01WNGEyUHJsRG80In0.eyJleHAiOjE3MjE3NDU1ODAsImlhdCI6MTcyMTc0NDY4MCwianRpIjoiNTI5NzAxNWItMmI5YS00ZDE0LWEwZjktMDA1YTU4NmQ0NGY1IiwiaXNzIjoiaHR0cDovL2tleS1zZXJ2ZXI6ODA5MC9yZWFsbXMvZ2FpYS14Iiwic3ViIjoiODIzNThjZTEtZTM2MS00MmNmLWE0NmUtOTM1ZmVjZjA1Y2M2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZmVkZXJhdGVkLWNhdGFsb2d1ZSIsInNlc3Npb25fc3RhdGUiOiIyOTljYWQwZS0yZjVlLTQ1OGEtOWNhZC1jYmFkMzlkZWYwYTIiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUm8tTVUtQ0EiLCJkZWZhdWx0LXJvbGVzLWdhaWEteCJdfSwic2NvcGUiOiJnYWlhLXgiLCJzaWQiOiIyOTljYWQwZS0yZjVlLTQ1OGEtOWNhZC1jYmFkMzlkZWYwYTIiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6Impvc2UuY2FudGVyYSJ9.EW20vxO2YRBCgpMZXq_O3HDfVQpNXGPc2BrqxmC2fdkkHA7XPzKkDzNr6i7xDKoIPpfBdsZorQ8w81CWhglHrmueKSzN64P7C3MX7dxua4rQNwQ1wJgc0FQtU92yANG3YkpLSUaj6xHkyw_jZrrFttTKLRWI9CIeQZ5KjNB4uVHF_uXCUs0Pa-WuwRlvPZpxSoYHLewix6H0pUr67ynNbjdtTWiCKIWSVHDWY_lFttAxiC05tkjsInc92V7JG7jEfLPx3DRt-Ia4yICfXhQ9vBSxpA5DafjUqE4Q6jPQCQKvceuIn7b4UHj5Amzvwj99v5k0CBOBw5gPWZTR-WQhvQ"
+		}
+	]
+}
