@@ -1,0 +1,261 @@
+{
+    "buildingBlocks": {
+        "auditableItemGraph": {
+            "serveRestRoutes": true
+        },
+        "identity": {
+            "serveRestRoutes": true
+        },
+        "authentication": {
+            "serveRestRoutes": true
+        },
+        "documentManagement": {
+            "serveRestRoutes": true,
+            "documentSharingUrl": "__ENV_S_DOCUMENT_SHARING_URL__",
+            "storage": "__ENV_S_DOCUMENT_STORAGE__",
+            "itemUrl": "__ENV_S_ITEM_URL__"
+        },
+        "tlip": {
+            "serveRestRoutes": true,
+            "uniqueIdentifierTypes": ["ucn", "ed", "ucr"]
+        },
+        "catalog": {
+            "serveRestRoutes": false
+        },
+        "eventBus": {
+            "serveRestRoutes": false
+        },
+        "inventory": {
+            "serveRestRoutes": false
+        },
+        "logger": {
+            "serveRestRoutes": false
+        },
+        "metrics": {
+            "serveRestRoutes": true
+        },
+        "simpleEventRepository": {
+            "serveRestRoutes": true
+        },
+        "dataExtraction": {
+            "serveRestRoutes": false,
+            "extractionMatrixDirectory": "assets/matrices/extractionMatrices",
+            "displayMatrixDirectory": "assets/matrices/displayMatrices"
+        },
+        "tlipConnector": {
+            "serveRestRoutes": true,
+            "providers": {
+                "https://www.agricultureauthority.go.ke": {
+                    "identifierType": "ucr",
+                    "endpoint": {
+                        "url": "__ENV_S_AFA_API_ENDPOINT__",
+                        "method": "GET",
+                        "security": {
+                            "in": "header",
+                            "type": "oauth2",
+                            "name": "Authorization",
+                            "scheme": "Bearer"
+                        },
+                        "credentials": {
+                            "username": "__ENV_S_AFA_API_USERNAME__",
+                            "password": "__ENV_S_AFA_API_PASSWORD__"
+                        }
+                    }
+                },
+                "https://kra.go.ke": {
+                  "identifierType": "ed",
+                    "endpoint": {
+                        "url": "__ENV_S_KRA_SOAP_ENDPOINT__",
+                        "method": "POST",
+                        "security": {
+                            "in": "header",
+                            "type": "basic",
+                            "name": "Authorization",
+                            "scheme": "basic"
+                        },
+                        "credentials": {
+                            "username": "__ENV_S_KRA_SOAP_USERNAME__",
+                            "password": "__ENV_S_KRA_SOAP_PASSWORD__"
+                        },
+                        "headers": {
+                            "soapAction": "TLIPQueryCOE"
+                        }
+                    }
+                },
+                "Mobius": {
+                    "identifierType": "ucr",
+                    "endpoint": {
+                        "url": "",
+                        "method": "GET",
+                        "security": {
+                            "in": "header",
+                            "type": "oauth2",
+                            "name": "Authorization",
+                            "scheme": "Bearer"
+                        },
+                        "credentials": {
+                            "algorithm": "RS256",
+                            "privateKey": "__ENV_S_MOBIUS_PRIVATE_KEY__"
+                        },
+                        "jwtPayload": {
+                            "aud": "MobiSenseTLIP",
+                            "iss": "TLIP"
+                        }
+                    }
+                }
+            },
+            "itemUrl": "__ENV_S_ITEM_URL__"
+        }
+    },
+    "node": {
+        "nodeEndpoint": "__ENV_S_HORNET_NODE_ENDPOINT__",
+        "permanodeEndpoint": "__ENV_S_PERMANODE_ENDPOINT__"
+    },
+    "fileStorageDirectory": "../../../.dev-storage",
+    "staticKeys": {
+        "jwtSubjectAuthKey": "__ENV_S_JWT_SUBJECT_AUTH_KEY__"
+    },
+    "urlAuth": {
+        "key": "__ENV_S_URL_AUTH_KEY__"
+    },
+    "logging": {
+        "levels": ["info", "warn", "error"],
+        "includeObjects": true,
+        "includeResponseStack": true,
+        "storeLogLevels": ["error"]
+    },
+    "identity": {
+        "networkName": "main",
+        "provider": "__ENV_S_IDENTITY_PROVIDER__",
+        "resolverBaseURL": "__ENV_S_RESOLVER_BASE_URL__",
+        "supportedDidMethods": ["iota"],
+        "verifiableCredentialRootUrl": "__ENV_S_VERIFIABLE_CREDENTIAL_ROOT_URL__",
+        "defaultVerificationMethodName": "__ENV_S_DEFAULT_VERIFICATION_METHOD_NAME__"
+    },
+    "email": {
+        "senderEmail": "__ENV_S_SENDER_EMAIL__",
+        "supportEmail":"__ENV_S_SUPPORT_EMAIL__",
+        "organization": "__ENV_S_ORGANIZATION__",
+        "verificationUrl": "__ENV_S_EMAIL_VERIFICATION_URL__",
+        "inviteUrl": "__ENV_S_EMAIL_INVITE_URL__",
+        "resetPasswordUrl": "__ENV_S_PASSWORD_RESET_URL__",
+        "itemUrl": "__ENV_S_ITEM_URL__",
+        "emailConfirmationUrl": "__ENV_S_ACCOUNT_EMAIL_CONFIRMATION_URL__",
+        "defaultAccessGroups": {
+                "admin": [
+                    {
+                        "type": "WRITE",
+                        "properties": [
+                            {
+                                "type": "DATA",
+                                "value": "data:write"
+                            },
+                            {
+                                "type": "DOCUMENT",
+                                "value": "document:write"
+                            },
+                            {
+                                "type": "DOCUMENT",
+                                "value": "document:share"
+                            }
+                        ]
+                    }
+                ],
+                "user": [
+                    {
+                        "type": "READ",
+                        "properties": [
+                            {
+                                "type": "DATA",
+                                "value": "data:read"
+                            },
+                            {
+                                "type": "DOCUMENT",
+                                "value": "document:read"
+                            }
+                        ]
+                    }
+                ]
+        },
+        "securityDefaults": {
+            "maxFailedPasswordAttempts": "__ENV_N_MAX_FAILED_LOGIN_ATTEMPTS__",
+            "maxPasswordHistory": "__ENV_N_MAX_PASSWORD_HISTORY__",
+            "resetLinkTTL": "__ENV_N_RESET_LINK_TTL__",
+            "inviteLinkTTL": "__ENV_N_INVITE_LINK_TTL__"
+        }
+    },
+    "scyllaDB": {
+        "hosts": ["__ENV_S_SCYLLA_DB_HOSTS__"],
+        "localDataCenter": "__ENV_S_SCYLLA_DB_LOCAL_DATA_CENTER__",
+        "keyspace": "__ENV_S_SCYLLA_DB_KEYSPACE__"
+    },
+    "aws": {
+        "region": "__ENV_S_AWS_REGION__",
+        "resourcePrefix": "__ENV_S_AWS_RESOURCE_PREFIX__",
+        "accessKeyId": "__ENV_S_AWS_ACCESS_KEY_ID__",
+        "secretAccessKey": "__ENV_S_AWS_SECRET_ACCESS_KEY__",
+        "awsDynamoDbEndpoint": "__ENV_S_AWS_DYNAMODB_ENDPOINT__"
+    },
+    "mySql": {
+        "host": "__ENV_S_MYSQL_HOST__",
+        "userName": "__ENV_S_MYSQL_USERNAME__",
+        "password": "__ENV_S_MYSQL_PASSWORD__",
+        "database": "__ENV_S_MYSQL_DATABASE__",
+        "resourcePrefix": "__ENV_S_MYSQL_RESOURCE_PREFIX__",
+        "connectionLimit": "__ENV_N_MYSQL_CONNECTION_LIMIT__",
+        "maxIdle": "__ENV_N_MYSQL_MAX_IDLE__",
+        "port": "__ENV_N_MYSQL_PORT__"
+    },
+    "services": {
+        "entity": "__ENV_S_ENTITY_SERVICE_STORAGE__",
+        "blob": "__ENV_S_BLOB_SERVICE_STORAGE__",
+        "immutable": "__ENV_S_IMMUTABLE_SERVICE_STORAGE__",
+        "mail": "__ENV_S_MAIL_SERVICE__"
+    },
+    "smtp": {
+        "host": "__ENV_S_MAIL_SMTP_HOST__",
+        "port": "__ENV_N_MAIL_SMTP_PORT__",
+        "secure": "__ENV_B_MAIL_SMTP_SECURE__",
+        "userName": "__ENV_S_MAIL_SMTP_USERNAME__",
+        "password": "__ENV_S_MAIL_SMTP_PASSWORD__"
+    },
+    "kraMqConfig": {
+        "connectionString": "__ENV_S_KRA_MQ_CONN_STRING__",
+        "vhost": "__ENV_S_KRA_MQ_VHOST__",
+        "frameMax": 0,
+        "reconnect": 60000,
+        "queues": {
+          "declaration": {
+              "accepted": {
+                  "consume": "__ENV_S_DECL_ACC_C_MQ_QUEUE_NAME__"
+              }
+          },
+          "coo": {
+                  "approved": "__ENV_S_COO_A_MQ_QUEUE_NAME__"
+              }
+          },
+          "prefetchCount": "__ENV_N_PREFETCH_COUNT__"
+    },
+    "kenTradeMqConfig": {
+        "connectionString": "__ENV_S_KENTRADE_MQ_CONN_STRING__",
+        "queues": {
+            "exportCertificate": "__ENV_S_KENTRADE_EXPORT_CERT_MQ_QUEUE_NAME__",
+            "consignmentDetails": "__ENV_S_KENTRADE_CONSIGNMENT_DETAILS_MQ_QUEUE_NAME__"
+        },
+        "exchanges": {
+            "kenTradeExchange": "__ENV_S_KENTRADE_EXCHANGE_NAME__"
+        },
+        "patterns": {
+            "exportCertificatePattern": "__ENV_S_EXPORT_CERTIFICATE_PATTERN__",
+            "consignmentdetailsPattern": "__ENV_S_CONSIGNMENT_DETAILS_PATTERN__",
+            "documentDeletionPattern": "__ENV_S_DOCUMENT_DELETION_PATTERN__"
+        },
+        "reconnect": "__ENV_N_MQ_RECONNECTION_RETRY_DELAY_MS__",
+        "prefetchCount": "__ENV_N_PREFETCH_COUNT__"
+    },
+    "ipfs": {
+        "privateUrl": "__ENV_S_IPFS_PRIVATE_URL__",
+        "publicUrl": "__ENV_S_IPFS_PUBLIC_URL__",
+        "authenticationToken": "__ENV_S_IPFS_AUTH_TOKEN__"
+    }
+}
